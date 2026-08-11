@@ -157,25 +157,25 @@
         }
       </script>
 </head>
-<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex">
+<body class="bg-background dark:bg-on-background text-on-background dark:text-background font-body-md text-body-md min-h-screen flex">
 <!-- Mobile Header -->
-<div class="md:hidden fixed top-0 w-full bg-surface-container-lowest z-40 px-margin-mobile py-4 flex justify-between items-center shadow-sm">
+<div class="md:hidden fixed top-0 w-full bg-surface-container-lowest dark:bg-[#122242] z-40 px-margin-mobile py-4 flex justify-between items-center shadow-sm">
 <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Kids Play Zone</h1>
-<button class="text-on-surface" id="mobileMenuBtn">
+<button class="text-on-surface dark:text-[#f8fafc]" id="mobileMenuBtn">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 <!-- SideNavBar (Shared Component) -->
-<nav class="bg-surface-container-low dark:bg-inverse-surface shadow-md h-full w-64 rounded-r-xl flex flex-col gap-4 p-4 h-screen fixed left-0 top-0 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300" id="sideNav">
+<nav class="bg-surface-container-low dark:bg-[#1a2a4a] dark:bg-inverse-surface shadow-md h-full w-64 rounded-r-xl flex flex-col gap-4 p-4 h-screen fixed left-0 top-0 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300" id="sideNav">
 <div class="flex items-center justify-between mb-8 md:mt-0 mt-4">
 <div class="flex items-center gap-3">
 <img class="w-12 h-12 rounded-full object-cover object-center" data-alt="A smiling parent avatar in a bright, modern setting, conveying a sense of premium service and approachability. The image should have a soft, joyful color palette, reflecting a professional yet playful family-oriented environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsBCGJY1qIDRFciMRMJMgJaneeOCiiVbFe_zw_t8lTvn2ril8vDIXozPsdmUNfJSt4TwmOsVAQInsBX_cYj-h62YvCT7HiJ-bT8bdAwDdaoWoxm4nDlv7r7xlOeue_sKWGevj3TJpPqIS6XIRbPN1De5MjgGjlAAA9H8YJ3EP1nqafpsgGex5NbiG3oN7x8MQXeE31Iem374di3mcpS9FawCIuaHx0WblePQx30p4IzPYgKmIslhQV"/>
 <div>
 <h2 class="font-headline-md text-headline-md text-primary" style="font-size: 1.125rem;">Welcome back!</h2>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Parent Dashboard</p>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Parent Dashboard</p>
 </div>
 </div>
-<button class="md:hidden text-on-surface-variant" id="closeMobileMenuBtn">
+<button class="md:hidden text-on-surface-variant dark:text-[#cbd5e1]" id="closeMobileMenuBtn">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -190,31 +190,31 @@
                 </a>
 </li>
 <li>
-<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
+<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
 <span class="material-symbols-outlined">card_membership</span>
                     Memberships
                 </a>
 </li>
 <li>
-<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
+<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
 <span class="material-symbols-outlined">history</span>
                     History
                 </a>
 </li>
 <li>
-<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
+<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
 <span class="material-symbols-outlined">receipt_long</span>
                     Invoices
                 </a>
 </li>
 <li>
-<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
+<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
 <span class="material-symbols-outlined">person</span>
                     Profile
                 </a>
 </li>
 </ul>
-<a class="mt-auto text-on-surface-variant hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
+<a class="mt-auto text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#">
 <span class="material-symbols-outlined">logout</span>
             Logout
         </a>
@@ -225,24 +225,24 @@
 <main class="flex-grow md:ml-64 p-margin-mobile md:p-margin-desktop pt-24 md:pt-margin-desktop w-full max-w-container-max mx-auto">
 <header class="mb-10">
 <h1 class="font-headline-xl text-headline-xl text-primary mb-2">Book a Session</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Schedule your next playtime adventure.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Schedule your next playtime adventure.</p>
 </header>
 <!-- Bento Grid Layout -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <!-- Book a Play Session (Main Focus) -->
-<section class="lg:col-span-8 bg-surface-container-lowest rounded-[24px] p-6 md:p-8 shadow-[0_4px_20px_rgba(0,97,147,0.05)] relative overflow-hidden">
-<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Select Details</h2>
+<section class="lg:col-span-8 bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 md:p-8 shadow-[0_4px_20px_rgba(0,97,147,0.05)] relative overflow-hidden">
+<h2 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-6">Select Details</h2>
 <form class="space-y-6 relative z-10">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Date -->
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Select Date</label>
-<input class="w-full bg-surface-container-low border border-outline-variant rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" type="date"/>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Select Date</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" type="date"/>
 </div>
 <!-- Time -->
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Select Time Slot</label>
-<select class="w-full bg-surface-container-low border border-outline-variant rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all appearance-none">
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Select Time Slot</label>
+<select class="w-full bg-surface-container-low dark:bg-[#1a2a4a] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all appearance-none">
 <option>10:00 AM - 12:00 PM</option>
 <option>01:00 PM - 03:00 PM</option>
 <option>04:00 PM - 06:00 PM</option>
@@ -251,42 +251,42 @@
 </div>
 <!-- Zone Selector -->
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-3">Choose Play Zone</label>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-3">Choose Play Zone</label>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <label class="cursor-pointer relative group">
 <input checked="" class="peer sr-only" name="zone" type="radio"/>
-<div class="bg-surface-container rounded-xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed transition-all group-hover:scale-[0.98]">
+<div class="bg-surface-container dark:bg-inverse-surface rounded-xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed transition-all group-hover:scale-[0.98]">
 <span class="material-symbols-outlined text-primary text-3xl mb-2" style="font-variation-settings: 'FILL' 1;">toys</span>
-<span class="block font-label-md text-label-md text-on-surface">Toddler Town</span>
+<span class="block font-label-md text-label-md text-on-surface dark:text-[#f8fafc]">Toddler Town</span>
 </div>
 </label>
 <label class="cursor-pointer relative group">
 <input class="peer sr-only" name="zone" type="radio"/>
-<div class="bg-surface-container rounded-xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed transition-all group-hover:scale-[0.98]">
+<div class="bg-surface-container dark:bg-inverse-surface rounded-xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed transition-all group-hover:scale-[0.98]">
 <span class="material-symbols-outlined text-primary text-3xl mb-2" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-<span class="block font-label-md text-label-md text-on-surface">Ninja Course</span>
+<span class="block font-label-md text-label-md text-on-surface dark:text-[#f8fafc]">Ninja Course</span>
 </div>
 </label>
 <label class="cursor-pointer relative group">
 <input class="peer sr-only" name="zone" type="radio"/>
-<div class="bg-surface-container rounded-xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed transition-all group-hover:scale-[0.98]">
+<div class="bg-surface-container dark:bg-inverse-surface rounded-xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed transition-all group-hover:scale-[0.98]">
 <span class="material-symbols-outlined text-primary text-3xl mb-2" style="font-variation-settings: 'FILL' 1;">palette</span>
-<span class="block font-label-md text-label-md text-on-surface">Art Studio</span>
+<span class="block font-label-md text-label-md text-on-surface dark:text-[#f8fafc]">Art Studio</span>
 </div>
 </label>
 </div>
 </div>
 <!-- Children Input -->
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Children Attending</label>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Children Attending</label>
 <div class="flex items-center gap-4">
-<label class="flex items-center gap-2 bg-surface-container rounded-xl px-4 py-2 cursor-pointer">
-<input checked="" class="text-primary rounded focus:ring-primary border-outline-variant" type="checkbox"/>
-<span class="font-body-md text-body-md text-on-surface">Leo (Age 4)</span>
+<label class="flex items-center gap-2 bg-surface-container dark:bg-inverse-surface rounded-xl px-4 py-2 cursor-pointer">
+<input checked="" class="text-primary rounded focus:ring-primary border-outline-variant dark:border-[#3f4850]" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">Leo (Age 4)</span>
 </label>
-<label class="flex items-center gap-2 bg-surface-container rounded-xl px-4 py-2 cursor-pointer">
-<input class="text-primary rounded focus:ring-primary border-outline-variant" type="checkbox"/>
-<span class="font-body-md text-body-md text-on-surface">Mia (Age 7)</span>
+<label class="flex items-center gap-2 bg-surface-container dark:bg-inverse-surface rounded-xl px-4 py-2 cursor-pointer">
+<input class="text-primary rounded focus:ring-primary border-outline-variant dark:border-[#3f4850]" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">Mia (Age 7)</span>
 </label>
 </div>
 </div>
@@ -329,26 +329,26 @@
 <div class="absolute -top-12 -right-12 w-32 h-32 bg-on-primary opacity-10 rounded-full blur-2xl"></div>
 </section>
 <!-- Quick Profile Snippet -->
-<section class="bg-surface-container-lowest rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,97,147,0.05)] flex-grow">
+<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,97,147,0.05)] flex-grow">
 <div class="flex justify-between items-center mb-4">
-<h3 class="font-headline-md text-headline-md text-on-surface" style="font-size: 1.25rem;">My Kids</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc]" style="font-size: 1.25rem;">My Kids</h3>
 <button class="text-primary hover:bg-primary-fixed rounded-full p-1 transition-colors">
 <span class="material-symbols-outlined">add_circle</span>
 </button>
 </div>
 <ul class="space-y-3">
-<li class="flex items-center gap-3 bg-surface-container-low p-3 rounded-xl border border-transparent hover:border-primary/20 transition-colors">
+<li class="flex items-center gap-3 bg-surface-container-low dark:bg-[#1a2a4a] p-3 rounded-xl border border-transparent hover:border-primary/20 transition-colors">
 <div class="w-10 h-10 bg-tertiary-fixed-dim text-on-tertiary-fixed rounded-full flex items-center justify-center font-bold">L</div>
 <div>
-<p class="font-label-md text-label-md text-on-surface">Leo</p>
-<p class="font-body-md text-body-md text-sm text-on-surface-variant">Age 4</p>
+<p class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc]">Leo</p>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Age 4</p>
 </div>
 </li>
-<li class="flex items-center gap-3 bg-surface-container-low p-3 rounded-xl border border-transparent hover:border-primary/20 transition-colors">
+<li class="flex items-center gap-3 bg-surface-container-low dark:bg-[#1a2a4a] p-3 rounded-xl border border-transparent hover:border-primary/20 transition-colors">
 <div class="w-10 h-10 bg-secondary-fixed text-on-secondary-fixed rounded-full flex items-center justify-center font-bold">M</div>
 <div>
-<p class="font-label-md text-label-md text-on-surface">Mia</p>
-<p class="font-body-md text-body-md text-sm text-on-surface-variant">Age 7</p>
+<p class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc]">Mia</p>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Age 7</p>
 </div>
 </li>
 </ul>

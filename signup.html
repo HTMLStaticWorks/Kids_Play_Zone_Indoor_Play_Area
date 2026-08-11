@@ -105,13 +105,13 @@
         .shadow-ambient-l2 { box-shadow: 0 8px 30px rgba(0, 97, 147, 0.1); }
     </style>
 </head>
-<body class="bg-background text-on-background antialiased font-body-md">
+<body class="bg-background dark:bg-on-background text-on-background dark:text-background antialiased font-body-md">
 <!-- TopNavBar (Nav suppressed as per rules for transactional pages like Sign-Up, but keeping a simplified header for brand anchor) -->
 <header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
 <div class="flex justify-between items-center px-margin-desktop md:px-margin-desktop px-margin-mobile py-4 max-w-container-max mx-auto">
 <a class="font-headline-md text-headline-md font-extrabold text-primary" href="/">PlayZone</a>
 <div class="flex gap-4">
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2 px-4" href="#">Login</a>
+<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors font-label-md text-label-md py-2 px-4" href="#">Login</a>
 </div>
 </div>
 </header>
@@ -122,44 +122,44 @@
 <div>
 <h1 class="font-headline-xl text-headline-xl text-primary mb-4 hidden md:block">Join the Fun!</h1>
 <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4 md:hidden">Join the Fun!</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Create an account to start booking play sessions, tracking your child's visits, and accessing exclusive offers.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Create an account to start booking play sessions, tracking your child's visits, and accessing exclusive offers.</p>
 </div>
 <!-- Registration Form Card -->
-<div class="bg-surface-container-lowest p-8 rounded-[24px] shadow-ambient-l1">
+<div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-ambient-l1">
 <form class="space-y-6">
 <!-- Parent Details -->
 <div class="space-y-4">
-<h3 class="font-headline-md text-headline-md text-on-surface">Parent Details</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc]">Parent Details</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">First Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Jane" type="text"/>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">First Name</label>
+<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Jane" type="text"/>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Last Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Doe" type="text"/>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Last Name</label>
+<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Doe" type="text"/>
 </div>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Email Address</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="jane@example.com" type="email"/>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Email Address</label>
+<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="jane@example.com" type="email"/>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Password</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="••••••••" type="password"/>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Password</label>
+<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="••••••••" type="password"/>
 </div>
 </div>
 <!-- Child Details -->
 <div class="space-y-4 pt-4 border-t border-surface-variant">
-<h3 class="font-headline-md text-headline-md text-on-surface">Child Details (Optional)</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc]">Child Details (Optional)</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Child's Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Tommy" type="text"/>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Child's Name</label>
+<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Tommy" type="text"/>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Date of Birth</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-on-surface-variant" type="date"/>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Date of Birth</label>
+<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-on-surface-variant dark:text-[#cbd5e1]" type="date"/>
 </div>
 </div>
 <button class="text-primary font-label-md text-label-md flex items-center gap-2 hover:opacity-80" type="button">
@@ -189,28 +189,28 @@
 </div>
 <!-- Why Join Us (Bento Grid Style) -->
 <div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Why PlayZone?</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-6">Why PlayZone?</h3>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="bg-surface-container-low p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
+<div class="bg-surface-container-low dark:bg-[#1a2a4a] p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
 <div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
 </div>
-<h4 class="font-label-md text-label-md text-on-surface mb-2">Easy Booking</h4>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Reserve spots instantly for walk-ins or special events.</p>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-2">Easy Booking</h4>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Reserve spots instantly for walk-ins or special events.</p>
 </div>
-<div class="bg-surface-container-low p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
+<div class="bg-surface-container-low dark:bg-[#1a2a4a] p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
 <div class="w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center mb-4 text-tertiary group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
 </div>
-<h4 class="font-label-md text-label-md text-on-surface mb-2">Play History</h4>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Track visits and manage your child's favorite zones.</p>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-2">Play History</h4>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Track visits and manage your child's favorite zones.</p>
 </div>
-<div class="bg-surface-container-low p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
+<div class="bg-surface-container-low dark:bg-[#1a2a4a] p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
 <div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center mb-4 text-secondary group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">loyalty</span>
 </div>
-<h4 class="font-label-md text-label-md text-on-surface mb-2">Exclusive Offers</h4>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Get member-only discounts on packages and parties.</p>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-2">Exclusive Offers</h4>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Get member-only discounts on packages and parties.</p>
 </div>
 </div>
 </div>
@@ -218,13 +218,13 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] dark:bg-surface-container-lowest border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
                 <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
-                <p class="font-body-md text-body-md text-on-surface-variant max-w-[250px]">
+                <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>
                 <div class="flex gap-4 mt-2">
@@ -241,47 +241,47 @@
             </div>
             <!-- Quick Links -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <h3 class="font-headline-sm text-[20px] text-on-surface font-bold">Quick Links</h3>
+                <h3 class="font-headline-sm text-[20px] text-on-surface dark:text-[#f8fafc] font-bold">Quick Links</h3>
                 <div class="flex flex-col gap-3">
-                    <a href="index.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Home</a>
-                    <a href="play zone.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Play Zone</a>
-                    <a href="gallery.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Gallery</a>
-                    <a href="membership.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Membership</a>
+                    <a href="index.html" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Home</a>
+                    <a href="play zone.html" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Play Zone</a>
+                    <a href="gallery.html" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Gallery</a>
+                    <a href="membership.html" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Membership</a>
                 </div>
             </div>
             <!-- Support & Packages -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <h3 class="font-headline-sm text-[20px] text-on-surface font-bold">Support</h3>
+                <h3 class="font-headline-sm text-[20px] text-on-surface dark:text-[#f8fafc] font-bold">Support</h3>
                 <div class="flex flex-col gap-3">
-                    <a href="package.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Packages</a>
-                    <a href="contact.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Contact Us</a>
-                    <a href="dashboard.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Parent Dashboard</a>
-                    <a href="#" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">FAQ</a>
+                    <a href="package.html" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Packages</a>
+                    <a href="contact.html" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Contact Us</a>
+                    <a href="dashboard.html" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Parent Dashboard</a>
+                    <a href="#" class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">FAQ</a>
                 </div>
             </div>
             <!-- Contact -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <h3 class="font-headline-sm text-[20px] text-on-surface font-bold">Visit Us</h3>
-                <div class="flex items-center gap-3 text-on-surface-variant">
+                <h3 class="font-headline-sm text-[20px] text-on-surface dark:text-[#f8fafc] font-bold">Visit Us</h3>
+                <div class="flex items-center gap-3 text-on-surface-variant dark:text-[#cbd5e1]">
                     <span class="material-symbols-outlined text-[20px] text-primary">location_on</span>
                     <span class="font-body-md text-body-md">123 Joyful Ave, Playtown, CA</span>
                 </div>
-                <div class="flex items-center gap-3 text-on-surface-variant">
+                <div class="flex items-center gap-3 text-on-surface-variant dark:text-[#cbd5e1]">
                     <span class="material-symbols-outlined text-[20px] text-primary">call</span>
                     <span class="font-body-md text-body-md">(555) 123-PLAY</span>
                 </div>
-                <div class="flex items-center gap-3 text-on-surface-variant">
+                <div class="flex items-center gap-3 text-on-surface-variant dark:text-[#cbd5e1]">
                     <span class="material-symbols-outlined text-[20px] text-primary">mail</span>
                     <span class="font-body-md text-body-md">hello@playzonekids.com</span>
                 </div>
             </div>
         </div>
-        <div class="border-t border-outline-variant/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Play Zone. All rights reserved.</p>
+        <div class="border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-center md:text-left">© 2024 Play Zone. All rights reserved.</p>
             <div class="flex flex-wrap gap-6 justify-center">
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Privacy Policy</a>
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Terms of Service</a>
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Cookie Policy</a>
+                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Terms of Service</a>
+                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Cookie Policy</a>
             </div>
         </div>
     </div>
