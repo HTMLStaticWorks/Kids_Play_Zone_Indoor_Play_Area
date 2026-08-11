@@ -113,8 +113,10 @@
 <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
 PlayZone
 </a>
-<div class="flex gap-4">
-<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors font-label-md text-label-md py-2 px-4" href="login.html">Login</a>
+<div class="flex items-center gap-4">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="text-on-surface-variant dark:text-[#cbd5e1] dark:text-inverse-on-surface hover:text-primary transition-colors font-label-md text-label-md uppercase">RTL</button>
+<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" class="text-on-surface-variant dark:text-[#cbd5e1] dark:text-inverse-on-surface hover:bg-primary/5 rounded-full p-2"><span class="material-symbols-outlined">dark_mode</span></button>
+<a class="text-on-surface-variant dark:text-[#cbd5e1] dark:text-inverse-on-surface hover:text-primary transition-colors font-label-md text-label-md py-2 px-4" href="login.html">Login</a>
 </div>
 </div>
 </header>
