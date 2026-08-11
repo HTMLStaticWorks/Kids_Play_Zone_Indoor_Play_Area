@@ -188,7 +188,7 @@
         </button>
 <ul class="flex flex-col gap-2 flex-grow">
 <li>
-<a class="bg-primary-container text-on-primary-container rounded-xl font-bold font-label-md text-label-md flex items-center gap-3 p-3 hover:scale-[0.98] transition-all" href="dashboard.html">
+<a class="sidebar-tab-link bg-primary-container text-on-primary-container rounded-xl font-bold font-label-md text-label-md flex items-center gap-3 p-3 hover:scale-[0.98] transition-all" href="#bookings" data-tab="bookings">
 <span class="material-symbols-outlined">calendar_today</span>
                     Bookings
                 </a>
@@ -200,19 +200,19 @@
                 </a>
 </li>
 <li>
-<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="javascript:void(0)">
+<a class="sidebar-tab-link text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#history" data-tab="history">
 <span class="material-symbols-outlined">history</span>
                     History
                 </a>
 </li>
 <li>
-<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="javascript:void(0)">
+<a class="sidebar-tab-link text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#invoices" data-tab="invoices">
 <span class="material-symbols-outlined">receipt_long</span>
                     Invoices
                 </a>
 </li>
 <li>
-<a class="text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="javascript:void(0)">
+<a class="sidebar-tab-link text-on-surface-variant dark:text-[#cbd5e1] hover:bg-surface-container-high rounded-xl font-label-md text-label-md flex items-center gap-3 p-3 hover:translate-x-1 transition-transform" href="#profile" data-tab="profile">
 <span class="material-symbols-outlined">person</span>
                     Profile
                 </a>
@@ -226,7 +226,9 @@
 <!-- Overlay for mobile -->
 <div class="fixed inset-0 bg-on-surface/20 z-40 hidden backdrop-blur-sm" id="mobileOverlay"></div>
 <!-- Main Content Canvas -->
-<main class="flex-grow md:ml-64 p-margin-mobile md:p-margin-desktop pt-24 md:pt-margin-desktop w-full max-w-container-max mx-auto">
+<main class="flex-grow md:ml-64 p-margin-mobile md:p-margin-desktop pt-24 md:pt-margin-desktop w-full max-w-container-max mx-auto relative">
+<!-- Tab: Bookings -->
+<div id="tab-bookings" class="tab-pane">
 <header class="mb-10">
 <h1 class="font-headline-xl text-headline-xl text-primary mb-2">Book a Session</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Schedule your next playtime adventure.</p>
@@ -359,7 +361,181 @@
 </section>
 </div>
 </div>
+</div>
+<!-- Tab: History -->
+<div id="tab-history" class="tab-pane hidden">
+<header class="mb-10">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Booking History</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">View your past and upcoming play sessions.</p>
+</header>
+<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30 dark:border-[#3f4850]/50 text-on-surface-variant dark:text-[#cbd5e1] font-label-md text-label-md">
+<th class="pb-4 font-normal">Date & Time</th>
+<th class="pb-4 font-normal">Play Zone</th>
+<th class="pb-4 font-normal">Children</th>
+<th class="pb-4 font-normal">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-outline-variant/30 dark:border-[#3f4850]/50">
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Nov 15, 2024<br><span class="text-sm text-on-surface-variant">10:00 AM - 12:00 PM</span></td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Toddler Town</td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Leo (4)</td>
+<td class="py-4"><span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-md text-sm">Upcoming</span></td>
+</tr>
+<tr class="border-b border-outline-variant/30 dark:border-[#3f4850]/50">
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Oct 28, 2024<br><span class="text-sm text-on-surface-variant">04:00 PM - 06:00 PM</span></td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Ninja Course</td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Mia (7)</td>
+<td class="py-4"><span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-sm">Completed</span></td>
+</tr>
+<tr>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Oct 10, 2024<br><span class="text-sm text-on-surface-variant">01:00 PM - 03:00 PM</span></td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Art Studio</td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Leo (4), Mia (7)</td>
+<td class="py-4"><span class="px-3 py-1 rounded-full bg-error/10 text-error font-label-md text-sm">Cancelled</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+
+<!-- Tab: Invoices -->
+<div id="tab-invoices" class="tab-pane hidden">
+<header class="mb-10">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Invoices</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Manage your billing and payment history.</p>
+</header>
+<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden">
+<div class="space-y-4">
+<!-- Invoice Item 1 -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-surface-container-low dark:bg-[#1a2a4a] rounded-xl border border-transparent hover:border-primary/20 transition-colors gap-4">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-1">Invoice #INV-2024-001</h3>
+<p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Issued: Oct 25, 2024 • Family Fun Pass (Monthly)</p>
+</div>
+<div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end">
+<span class="font-headline-sm text-lg font-bold text-tertiary">$49.00</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-sm">Paid</span>
+<button class="text-primary hover:bg-primary/10 rounded-full p-2 transition-colors" title="Download Invoice">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<!-- Invoice Item 2 -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-surface-container-low dark:bg-[#1a2a4a] rounded-xl border border-transparent hover:border-primary/20 transition-colors gap-4">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-1">Invoice #INV-2024-002</h3>
+<p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Issued: Sep 25, 2024 • Family Fun Pass (Monthly)</p>
+</div>
+<div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end">
+<span class="font-headline-sm text-lg font-bold text-tertiary">$49.00</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-sm">Paid</span>
+<button class="text-primary hover:bg-primary/10 rounded-full p-2 transition-colors" title="Download Invoice">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- Tab: Profile -->
+<div id="tab-profile" class="tab-pane hidden">
+<header class="mb-10">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">My Profile</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Update your personal information and preferences.</p>
+</header>
+<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden max-w-3xl">
+<form class="space-y-6">
+<div class="flex items-center gap-6 mb-8">
+<div class="relative">
+<img class="w-24 h-24 rounded-full object-cover object-center border-4 border-surface" data-alt="Profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsBCGJY1qIDRFciMRMJMgJaneeOCiiVbFe_zw_t8lTvn2ril8vDIXozPsdmUNfJSt4TwmOsVAQInsBX_cYj-h62YvCT7HiJ-bT8bdAwDdaoWoxm4nDlv7r7xlOeue_sKWGevj3TJpPqIS6XIRbPN1De5MjgGjlAAA9H8YJ3EP1nqafpsgGex5NbiG3oN7x8MQXeE31Iem374di3mcpS9FawCIuaHx0WblePQx30p4IzPYgKmIslhQV"/>
+<button type="button" class="absolute bottom-0 right-0 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc]">Parent Account</h3>
+<p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1]">Member since 2023</p>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Full Name</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface dark:text-[#f8fafc]" type="text" value="Jane Doe"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Email Address</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface dark:text-[#f8fafc]" type="email" value="jane.doe@example.com"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Phone Number</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface dark:text-[#f8fafc]" type="tel" value="(555) 123-4567"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Emergency Contact</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface dark:text-[#f8fafc]" type="tel" value="(555) 987-6543"/>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/30 dark:border-[#3f4850]/50 flex justify-end">
+<button class="bg-primary text-on-primary font-label-md text-label-md py-3 px-8 rounded-full hover:scale-[0.98] transition-transform shadow-md" type="button">
+Save Changes
+</button>
+</div>
+</form>
+</section>
+</div>
+
 </main>
+<script>
+        const tabLinks = document.querySelectorAll('.sidebar-tab-link');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Get target tab
+                const targetTabId = link.getAttribute('data-tab');
+                
+                // Remove active classes from all links
+                tabLinks.forEach(l => {
+                    l.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+                    l.classList.add('text-on-surface-variant', 'dark:text-[#cbd5e1]');
+                });
+                
+                // Add active classes to clicked link
+                link.classList.remove('text-on-surface-variant', 'dark:text-[#cbd5e1]');
+                link.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+
+                // Hide all tab panes
+                tabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                });
+                
+                // Show target tab pane
+                document.getElementById('tab-' + targetTabId).classList.remove('hidden');
+
+                // Close mobile menu if open
+                if (window.innerWidth < 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Make Memberships link visually distinct but not active
+        const membershipsLink = document.querySelector('a[href="membership.html"]');
+        if(membershipsLink) {
+            membershipsLink.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+            membershipsLink.classList.add('text-on-surface-variant', 'dark:text-[#cbd5e1]');
+        }
+    </script>
 <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
