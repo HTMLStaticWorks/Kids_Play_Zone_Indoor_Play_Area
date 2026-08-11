@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kids Play Zone &amp; Indoor Play Area</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Nunito+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#edf0ff",
+                      "on-secondary-fixed-variant": "#544600",
+                      "primary-fixed-dim": "#92ccff",
+                      "on-primary-fixed": "#001e31",
+                      "on-surface-variant": "#3f4850",
+                      "surface-dim": "#ccd9ff",
+                      "primary-container": "#007bb9",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#e9c400",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#faf8ff",
+                      "surface-container": "#e9edff",
+                      "on-secondary-fixed": "#221b00",
+                      "primary": "#006193",
+                      "outline": "#6f7881",
+                      "primary-fixed": "#cce5ff",
+                      "on-tertiary-fixed-variant": "#8f0046",
+                      "surface-container-highest": "#d9e2ff",
+                      "tertiary": "#b5075a",
+                      "on-primary-fixed-variant": "#004b73",
+                      "inverse-surface": "#213050",
+                      "inverse-primary": "#92ccff",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#d72e73",
+                      "surface-bright": "#faf8ff",
+                      "surface-container-high": "#e1e8ff",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-tint": "#006497",
+                      "on-background": "#0a1a3a",
+                      "error-container": "#ffdad6",
+                      "secondary": "#705d00",
+                      "on-tertiary-fixed": "#3f001b",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#bfc7d2",
+                      "background": "#faf8ff",
+                      "secondary-container": "#fdd400",
+                      "on-secondary-container": "#6f5c00",
+                      "tertiary-fixed-dim": "#ffb1c5",
+                      "on-primary-container": "#fdfcff",
+                      "surface-variant": "#d9e2ff",
+                      "surface-container-low": "#f1f3ff",
+                      "on-surface": "#0a1a3a",
+                      "tertiary-fixed": "#ffd9e1",
+                      "secondary-fixed": "#ffe170"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "40px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Nunito Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl": [
+                              "Nunito Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Nunito Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .balloon {
+            position: absolute;
+            bottom: -50px;
+            animation: float 8s ease-in-out infinite;
+        }
+        .balloon:nth-child(2) { animation-delay: 2s; left: 10%; }
+        .balloon:nth-child(3) { animation-delay: 4s; left: 20%; }
+        .balloon:nth-child(4) { animation-delay: 1s; left: 80%; }
+        .balloon:nth-child(5) { animation-delay: 3s; left: 90%; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-100px) rotate(5deg); }
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background-color: #fdd400;
+            top: -20px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(720deg); }
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm dark:bg-surface-container-high fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed-dim">
+                Play Zone
+            </div>
+<div class="hidden md:flex items-center gap-2">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary font-bold font-label-md text-label-md hover:scale-105 transition-transform duration-200 px-4 py-2" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:bg-primary/5 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2" href="play zone.html">Play Zone</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:bg-primary/5 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:bg-primary/5 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2" href="membership.html">Membership</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:bg-primary/5 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2" href="package.html">Package</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:bg-primary/5 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2" href="contact.html">Contact</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:bg-primary/5 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2" href="dashboard.html">Dashboard</a>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase hidden md:block">RTL</button>
+<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" class="text-on-surface-variant hover:bg-primary/5 rounded-full p-2 hidden md:block"><span class="material-symbols-outlined">dark_mode</span></button>
+<a href="login.html" class="font-label-md text-label-md text-primary px-4 py-2 hover:bg-primary/5 rounded-full hidden md:block">Login</a>
+<a href="signup.html" class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded-full scale-on-press transition-transform shadow-ambient">Sign Up</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden flex flex-col items-center justify-center text-center">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 before:absolute before:inset-0 before:bg-surface-dim/80 before:z-10" data-alt="A brightly lit, expansive indoor kids play area featuring colorful padded slides, ball pits, and climbing structures. The aesthetic is clean, modern, and highly saturated with sky blues, sunshine yellows, and bubblegum pinks against a crisp white background. Natural light floods the space, creating an inviting, safe, and joyful atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2ydApm2cm0WJuTJyQNI8EqAd0Fr1rGfzqi7I9UYZmGa-JIOiBspvLlrOfioempc2N_3rqOXZNkLV5WN52HpVJm_Hxh_Ml2u7jSKMBD3-Wekxb0wekLqUYSoi3UFKLnrLalC5h7PSYBPz2Hq1zBFMny2_FgbmnRw3c2qLy9wk-hTEgJHiNTQl_ufQbxG8Jr9FBSep2jxfA54nN-dc_pTIUejWZvwKHxfhPxrv0S-IkNhb0DGszJPYl')"></div>
+<!-- Animations -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden" id="confetti-container">
+<svg class="balloon w-16 h-24 text-tertiary-container" fill="currentColor" viewbox="0 0 100 150"><path d="M50 0C25 0 5 20 5 50c0 35 45 60 45 60s45-25 45-60C95 20 75 0 50 0z"></path></svg>
+<svg class="balloon w-12 h-20 text-secondary-container" fill="currentColor" viewbox="0 0 100 150"><path d="M50 0C25 0 5 20 5 50c0 35 45 60 45 60s45-25 45-60C95 20 75 0 50 0z"></path></svg>
+<svg class="balloon w-14 h-22 text-primary" fill="currentColor" viewbox="0 0 100 150"><path d="M50 0C25 0 5 20 5 50c0 35 45 60 45 60s45-25 45-60C95 20 75 0 50 0z"></path></svg>
+</div>
+<div class="relative z-10 max-w-container-max px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6 max-w-4xl drop-shadow-sm">Where Little Adventures Begin Every Day</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">Experience a world of safe, clean, and imaginative play designed for children of all ages to explore, learn, and grow.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:scale-95 transition-transform duration-150 shadow-md">Explore Play Zones</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:scale-95 transition-transform duration-150 shadow-md">Reserve a Slot</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-24">
+<!-- Play Zones Section (Bento Grid) -->
+<section class="flex flex-col items-center">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Play Zones by Age Group</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Tailored environments ensuring safety and fun for every developmental stage.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+<!-- Toddler -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group">
+<div class="w-full h-48 rounded-[16px] mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A soft-play toddler zone with pastel-colored foam blocks, small ramps, and sensory wall panels. Bright, airy lighting highlights the safe, padded environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6bycy3sIqVT01ytdWQHf7q2gJbKL0LtFzpToHNL_4MX7-nHSWDfEYp8NTGNUpIcrZjwZvhjUcW_Ld6SfZW2uTJq95h4SHIBvgPWWdYmPjBO9izUv4X1A6Msf_SlQzjkdmvzNKSbGZFCAG6DZJHYReZlhvFpN4Rf44Gfxg380gDNA7gaZ6vjEKMOk_R2a4bIx4XUu58_t5GBT-_HDTVHgL7Eojt_SKVT-a4EYhtsuBuDI63td-6cVx"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-md text-label-md mb-4 inline-block">Ages 0-3</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Toddler Town</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Soft sensory play, mini ball pits, and gentle climbing structures designed for our youngest explorers to develop motor skills safely.</p>
+</div>
+<!-- Junior -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group md:-translate-y-8">
+<div class="w-full h-48 rounded-[16px] mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A vibrant junior play area featuring interactive digital floor games, moderate climbing walls, and colorful twisty slides. Energetic and well-lit space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsozR-VlY4fDetVze1il5MMBR20dsgcxyB23DYPdgURHvUoKm73TCxA3NeL5rmQ3nD6fgpq4yvFyEfBPjZx3hC1drEcNQHN9CpoVmtLysIAaEVJWaZEQS72ddW6YBgqBfx9rvH6bSQ7n2x3U6k_Irn93OgjwynA1hBwd3TmIch8knibAwG5kJ8oUglGL-VEIPLNkPf3OkCS4KuXASvXiFP0dosvqUAO_T8ZlH5jB7Uv326OyGoCBVp"/>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed px-4 py-1 rounded-full font-label-md text-label-md mb-4 inline-block">Ages 4-7</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Junior Jungle</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Interactive games, imaginative role-play areas, and engaging physical challenges to spark creativity and social interaction.</p>
+</div>
+<!-- Adventure -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group">
+<div class="w-full h-48 rounded-[16px] mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A dynamic adventure zone for older kids featuring a complex multi-level climbing frame, rope bridges, and a large central slide. Vibrant blues and pinks dominate the aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF6LempW4YwPCNmdPTQbHQymRZC9mEn9OWs4CuoDG5ufexJVHk0zbWW_HFhH4sMBDEU47rBZJb_7RQjvVdxLuh4jK1XfOpp-Bk2d-9Ns2XGwhJWkZPhP_G2y31WFoflZbiU-stq2d0Twq00pt46eWBj_QOoqEGZdvjVoxCl-2HcaPZbVJIVl67-C_c_9A4xaXI98W0MZzTe8AP_rlmjj9bEXU69cCADvfiWDVLaeKGaWpeEDpYzrAf"/>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full font-label-md text-label-md mb-4 inline-block">Ages 8-12</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Adventure Arena</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Multi-level climbing frames, obstacle courses, and thrilling slides for older kids seeking high-energy fun and physical challenges.</p>
+</div>
+</div>
+</section>
+<!-- Safety Measures (Glassmorphism-inspired layout) -->
+<section class="relative bg-primary-container rounded-[32px] p-8 md:p-16 overflow-hidden text-center flex flex-col items-center">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary-container rounded-full blur-3xl opacity-30 translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+<div class="relative z-10 w-full">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-12">Uncompromising Safety First</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-on-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-primary" style="font-size: 32px; font-variation-settings: 'FILL' 1;">health_and_safety</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2 text-xl">Sanitized Daily</h4>
+<p class="font-body-md text-body-md text-on-primary/80">Hospital-grade cleaning protocols every single night.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-on-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-primary" style="font-size: 32px; font-variation-settings: 'FILL' 1;">videocam</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2 text-xl">24/7 CCTV</h4>
+<p class="font-body-md text-body-md text-on-primary/80">Comprehensive monitoring for peace of mind.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-on-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-primary" style="font-size: 32px; font-variation-settings: 'FILL' 1;">layers</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2 text-xl">Padded Floors</h4>
+<p class="font-body-md text-body-md text-on-primary/80">Impact-absorbing surfaces throughout the entire facility.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-on-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-primary" style="font-size: 32px; font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2 text-xl">Trained Staff</h4>
+<p class="font-body-md text-body-md text-on-primary/80">First-aid certified and child-care experienced team.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 1. The Fuel Station (Café) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1 flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">The Fuel Station Café</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Relax and recharge while the kids play. Enjoy our selection of premium, ethically sourced coffee for parents, and a variety of delicious, healthy snacks designed to keep little ones energized.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span> Premium Artisan Coffee
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span> Healthy &amp; Nutritious Kid's Meals
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span> Free High-Speed Wi-Fi
+</li>
+</ul>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-label-md text-label-md hover:scale-95 transition-transform w-fit shadow-sm">View Menu</button>
+</div>
+<div class="order-1 md:order-2 h-[400px] rounded-[32px] overflow-hidden shadow-lg">
+<img alt="Modern and comfortable cafe area with coffee and snacks" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ0u9hF7hD-FLtF31UZ73Cr0J0YeFFfRML3PiwlrvMrFsPJH6odrNE-ALt5b7pl8T3BUEiiUkbB2JgAacPP_lSfZsu7TbvXe0z4Zd9VU6rE-9LjhTtMJl6Mjg0v6ArKFPBo9hoTSi6QpZKFpye2vZSpz2g58lxHDQfZIZovJTWHd3tEIX0YsBs1do15LlXpDnmeYq5gZ-lpFxAkndSj1J98DYhcF0C8LjVBdIIjw5MlxoE6wYOD44T"/>
+</div>
+</section>
+<!-- 2. Where the Fun Happens -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-low rounded-[32px] p-8 md:p-12">
+<div class="h-[400px] rounded-[24px] overflow-hidden shadow-md">
+<img alt="Exterior view of the Kids Play Zone facility showing easy access" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5OqT5k0z4NbcP7OuNrTqWKC5J9uROEE-S4IfO4nupGs-7pYeckdQP5uk_TxFKPxY3VYI1fSd-SWKzX_mHTWHRjkboM5LpiAF7Zq5K_F8k988AJU2S7SU5OBZmeqjSI24evV9JaCBZ-Qvw-o1-AbTHbDxM91s8OAfnKHz3YHhwI1aGuVJfvCvRdW51VaAldsrYxPPJTCJKWhoV7bFDlQYQDyigxeCPnCdAUvcPYKzFa42JmWtm3MQZ"/>
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Where the Fun Happens</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Conveniently located in the heart of the city with ample free parking. Our facility is fully accessible, making it easy for families to drop in for a day of fun.</p>
+<div class="flex items-start gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed">location_on</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl text-on-surface mb-1">Location</h4>
+<p class="font-body-md text-on-surface-variant">123 Adventure Way, Playtown, PT 12345</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed">schedule</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl text-on-surface mb-1">Opening Hours</h4>
+<p class="font-body-md text-on-surface-variant">Mon-Sun: 9:00 AM - 7:00 PM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Recent Adventures (Blog/News) -->
+<section class="flex flex-col items-center">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Recent Adventures</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Catch up on the latest events, stories, and activities happening at Kids Play Zone.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+<a class="bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col" href="#">
+<div class="h-48 overflow-hidden">
+<img alt="Kids participating in a summer camp activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFj1JXpC-1yTWiwouELhd_lA3I4c6tvqbDIzE81wW-n0pU7zqkh-cszwR9OuG7vxcbK4t4bT6aYSXwePy_p4ZgVP_oFTcVnAvYgAN_6meZdb6yooUFg6Pkf77JcwAcode74Y65vsEE4dGXi9HzwA2ZFmtWbPlW1RSIPu0Dl_bkaI-P9XL2XijvYxDbWWwZKeFYf5SavQra0HhMZvUCmIy8OeY6oAPC-uPrLrW4TDF24H-lZ0Okziux"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<span class="text-tertiary font-label-md mb-2">Events</span>
+<h3 class="font-headline-md text-on-surface mb-3 text-xl group-hover:text-primary transition-colors">Summer Camp Highlights 2024</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-3">Take a look at the incredible fun we had during this year's summer camp, featuring arts, crafts, and non-stop play.</p>
+</div>
+</a>
+<a class="bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col" href="#">
+<div class="h-48 overflow-hidden">
+<img alt="A child laughing in a ball pit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7J7ix2P_nRTV3GbANBBgBzHE4vWx9FC3DzXqmxXsxAKszlRV-cfpD95vvNxMh-ddENFfTYQPrDvWIhr-7qMSHSMlGvMFDlPobsXcoMCnD9bYxlnHw_eIA2RefMeBCd5ChwurZYmEwZeHBsCoOI1FP1pAfubYIgqmavOxPFFPEe26_Qnc54FIezPFUKgNEC5bJj36oDUfoBG6qpcGssHC0f7k5iKakKAk2GXNpMv6GAYLY1UiByoJs"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<span class="text-tertiary font-label-md mb-2">News</span>
+<h3 class="font-headline-md text-on-surface mb-3 text-xl group-hover:text-primary transition-colors">New Toddler Zone Expansion</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-3">We've added even more soft play areas and interactive sensory panels for our youngest visitors to enjoy safely.</p>
+</div>
+</a>
+<a class="bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col" href="#">
+<div class="h-48 overflow-hidden">
+<img alt="A magical themed birthday party setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ9uwnod4bjA9ol9iNgtY0TKOcYHvGlxNYd5plLcWygkVcrbzdP-uNeucfh834D_BL9KJcAuoBmyKUvtz5qtH4vz9_4R3XyqM2-uuvk8mkrUqaoNmCk5QcVp4Pxtr2W-uUF9Tr9r6OIK-T1OlzBcW9EPFRrH90sdv4sAJmpl4DvPiFsBqGpSVCvahU8896Ab9gfGclJb1I9A58wsAC2YSoXIpKpmNHeFHNLu4xSkQnqPlK-Mvy_M0l"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<span class="text-tertiary font-label-md mb-2">Parties</span>
+<h3 class="font-headline-md text-on-surface mb-3 text-xl group-hover:text-primary transition-colors">How to Host the Perfect Party</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-3">Discover our top tips and exclusive packages for hosting a stress-free and unforgettable birthday party.</p>
+</div>
+</a>
+</div>
+</section>
+<!-- 4. Safety as Standard -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-highest rounded-[32px] overflow-hidden">
+<div class="p-8 md:p-16 flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Safety as Standard</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">We go above and beyond to provide a secure environment. From secure gating and wristband matching to hospital-grade sanitization, your child's wellbeing is our absolute priority.</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<h4 class="font-headline-md text-lg text-on-surface">Secure Entry</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Strict check-in/out procedures.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">cleaning_services</span>
+<h4 class="font-headline-md text-lg text-on-surface">Deep Cleaned</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Nightly electrostatic sanitization.</p>
+</div>
+</div>
+</div>
+<div class="h-full min-h-[400px]">
+<img alt="Staff member sanitizing play equipment meticulously" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARvnYfHZuwbCPQrDsiZluvvOS-2-zPbspyXKBitP0f1-oGChl_hXVNZsQNTPBR1lRJND8wUqvciqHtD21rXxaBmI-7_HqH_OqWcpWPKvMHU8EBKWkPQ4KnAeTmWL721GdQnx-itgy5OJIlIHCO6HoTohH61f4u7BOvUoIE6w1bwE6Cq3paqkgZIF8W6-Hn2XkOMmWWTr4IVRwW_qYHxmuySW9Rqy1MgYqQ1t8j_Sqktbm42iXQODyz"/>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/50 pt-16 pb-8 mt-20">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- Brand -->
+            <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
+                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-[250px]">
+                    Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
+                </p>
+                <div class="flex gap-4 mt-2">
+                    <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Quick Links -->
+            <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
+                <h3 class="font-headline-sm text-[20px] text-on-surface font-bold">Quick Links</h3>
+                <div class="flex flex-col gap-3">
+                    <a href="index.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Home</a>
+                    <a href="play zone.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Play Zone</a>
+                    <a href="gallery.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Gallery</a>
+                    <a href="membership.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Membership</a>
+                </div>
+            </div>
+            <!-- Support & Packages -->
+            <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
+                <h3 class="font-headline-sm text-[20px] text-on-surface font-bold">Support</h3>
+                <div class="flex flex-col gap-3">
+                    <a href="package.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Packages</a>
+                    <a href="contact.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Contact Us</a>
+                    <a href="dashboard.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Parent Dashboard</a>
+                    <a href="#" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">FAQ</a>
+                </div>
+            </div>
+            <!-- Contact -->
+            <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
+                <h3 class="font-headline-sm text-[20px] text-on-surface font-bold">Visit Us</h3>
+                <div class="flex items-center gap-3 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[20px] text-primary">location_on</span>
+                    <span class="font-body-md text-body-md">123 Joyful Ave, Playtown, CA</span>
+                </div>
+                <div class="flex items-center gap-3 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[20px] text-primary">call</span>
+                    <span class="font-body-md text-body-md">(555) 123-PLAY</span>
+                </div>
+                <div class="flex items-center gap-3 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[20px] text-primary">mail</span>
+                    <span class="font-body-md text-body-md">hello@playzonekids.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-outline-variant/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Play Zone. All rights reserved.</p>
+            <div class="flex flex-wrap gap-6 justify-center">
+                <a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Terms of Service</a>
+                <a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        // Simple JS for confetti generation in hero
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('confetti-container');
+            if(container) {
+                for (let i = 0; i < 20; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti-piece');
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    confetti.style.animationDelay = Math.random() * 5 + 's';
+                    const colors = ['#fdd400', '#d72e73', '#92ccff', '#007bb9'];
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    container.appendChild(confetti);
+                }
+            }
+        });
+    </script>
+</body></html>
