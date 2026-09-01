@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -249,58 +258,66 @@
 <!-- 2. Packages Grid -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Choose Your Party Vibe</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-4">Choose Your Party Vibe</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto">Flexible packages designed for different ages, group sizes, and budgets.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
 <!-- Package 1 -->
-<div class="bg-surface dark:bg-on-background rounded-[24px] overflow-hidden shadow-level-1 shadow-level-2 transition-all duration-300 flex flex-col">
-<div class="h-48 relative">
-<img class="w-full h-full object-cover object-center" data-alt="A group of kids sitting around a colorful birthday table with a small cake, wearing party hats. Bright blue and yellow balloons in the background. Joyful, simple party setting in a bright indoor play area. Clean lighting, cheerful mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUnWojGi5h0unKHVV_Fr1K4tEWOnErACP0LO02rCzIlcDY2cjzbKVfq3VHtWtyHx2M8wxZID64AxyD7mEwdwjnbq1SyuvOvpnl6BCdT_ZOwKxcKHPmUqEY9RCOkGxSkAlM4mKgAzRjxZddKjrGNuK55RnI1bluNbLmUuQFA6y3AVXXQ1sHgzF3GhFsYfBa7gOwZ3kXjsZhHCqGIBM_RzbvKhcIePGYfDhB06dpoEq4mC5ZoJIKl_V2"/>
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] overflow-hidden shadow-level-1 hover:shadow-level-2 transition-all duration-300 flex flex-col justify-between h-full">
+<div class="h-48 relative shrink-0">
+<img class="w-full h-full object-cover object-center" data-alt="Basic party setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUnWojGi5h0unKHVV_Fr1K4tEWOnErACP0LO02rCzIlcDY2cjzbKVfq3VHtWtyHx2M8wxZID64AxyD7mEwdwjnbq1SyuvOvpnl6BCdT_ZOwKxcKHPmUqEY9RCOkGxSkAlM4mKgAzRjxZddKjrGNuK55RnI1bluNbLmUuQFA6y3AVXXQ1sHgzF3GhFsYfBa7gOwZ3kXjsZhHCqGIBM_RzbvKhcIePGYfDhB06dpoEq4mC5ZoJIKl_V2"/>
 </div>
-<div class="p-8 flex-1 flex flex-col">
-<h3 class="font-headline-md text-headline-md text-primary mb-2">The Bounce Basic</h3>
-<div class="text-3xl font-bold text-tertiary mb-6">$299 <span class="text-body-md text-on-surface-variant dark:text-[#cbd5e1] font-normal">/up to 10 kids</span></div>
-<ul class="space-y-3 mb-8 flex-1">
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-2">The Bounce Basic</h3>
+<div class="text-3xl font-bold text-tertiary dark:text-tertiary-fixed-dim mb-6">$299 <span class="text-body-md text-on-surface-variant dark:text-[#cbd5e1] font-normal">/up to 10 kids</span></div>
+<ul class="space-y-3 mb-8">
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span> <span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">2 hours jump time</span></li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span> <span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">Reserved party table</span></li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span> <span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">Basic decorations</span></li>
 </ul>
-<button class="w-full border-2 border-primary text-primary font-label-md text-label-md py-3 rounded-full btn-scale hover:bg-primary/5 transition-colors">Select Basic</button>
+</div>
+<button class="w-full bg-primary text-on-primary dark:bg-primary-fixed dark:text-on-primary-fixed font-label-md text-label-md py-3.5 px-6 rounded-full btn-scale shadow-sm hover:opacity-90 transition-all mt-auto font-semibold">Select Basic</button>
 </div>
 </div>
+
 <!-- Package 2 -->
-<div class="bg-primary text-on-primary rounded-[24px] overflow-hidden shadow-level-1 shadow-level-2 transition-all duration-300 flex flex-col relative transform md:-translate-y-4">
-<div class="absolute top-4 right-4 bg-secondary text-on-secondary font-label-md text-label-md px-3 py-1 rounded-full z-10 text-xs">MOST POPULAR</div>
-<div class="h-48 relative">
-<img class="w-full h-full object-cover object-center" data-alt="An elaborate kids birthday party setup with a spectacular themed cake, colorful goodie bags, and a dedicated party host entertaining children. Vibrant blues, pinks, and yellows. High energy, premium party experience. Bright, professional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnK8hySTKPyl845TaSGorFUdd6oz_Y-C7tUnRfxHmydcgqLrtOnr0oeR4Qw_S0B-45NNKlqh7JIwFUJY0DdlKGPuaHQ2sEbFGkJaTKoYqIFp3WDMH4M_Jo3zqZksTb-ZS8dNJp0PsAUK9LCNfAciIf-pRpb8Xqn9C1HQMvsViWkJtVghJ5iPBk-DIR4u3fHJrnAOv4csT2u_v3ROdiexhL9olrGU74SHPleb61hFBgtObgwB8nCj7A"/>
+<div class="bg-primary text-on-primary rounded-[24px] overflow-hidden shadow-level-1 hover:shadow-level-2 transition-all duration-300 flex flex-col justify-between h-full relative transform md:-translate-y-4">
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md px-3.5 py-1 rounded-full z-10 text-xs font-extrabold shadow-sm">MOST POPULAR</div>
+<div class="h-48 relative shrink-0">
+<img class="w-full h-full object-cover object-center" data-alt="Pro party setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnK8hySTKPyl845TaSGorFUdd6oz_Y-C7tUnRfxHmydcgqLrtOnr0oeR4Qw_S0B-45NNKlqh7JIwFUJY0DdlKGPuaHQ2sEbFGkJaTKoYqIFp3WDMH4M_Jo3zqZksTb-ZS8dNJp0PsAUK9LCNfAciIf-pRpb8Xqn9C1HQMvsViWkJtVghJ5iPBk-DIR4u3fHJrnAOv4csT2u_v3ROdiexhL9olrGU74SHPleb61hFBgtObgwB8nCj7A"/>
 </div>
-<div class="p-8 flex-1 flex flex-col">
-<h3 class="font-headline-md text-headline-md mb-2">Mega Party Pro</h3>
-<div class="text-3xl font-bold text-secondary mb-6">$499 <span class="text-body-md text-on-primary/80 font-normal">/up to 15 kids</span></div>
-<ul class="space-y-3 mb-8 flex-1">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md">2.5 hours jump time</span></li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md">Private party room</span></li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md">Dedicated party host</span></li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md">Pizza &amp; drinks included</span></li>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Mega Party Pro</h3>
+<div class="text-3xl font-bold text-secondary-fixed mb-6">$499 <span class="text-body-md text-on-primary/90 font-normal">/up to 15 kids</span></div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md text-white">2.5 hours jump time</span></li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md text-white">Private party room</span></li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md text-white">Dedicated party host</span></li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span> <span class="font-body-md text-body-md text-white">Pizza &amp; drinks included</span></li>
 </ul>
-<button class="w-full bg-secondary text-on-secondary font-label-md text-label-md py-3 rounded-full btn-scale hover:bg-secondary/90 transition-colors">Select Pro</button>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-md text-label-md py-3.5 px-6 rounded-full btn-scale shadow-md hover:scale-[1.02] transition-all mt-auto font-extrabold">Select Pro</button>
 </div>
 </div>
+
 <!-- Package 3 -->
-<div class="bg-surface dark:bg-on-background rounded-[24px] overflow-hidden shadow-level-1 shadow-level-2 transition-all duration-300 flex flex-col">
-<div class="h-48 relative">
-<img class="w-full h-full object-cover object-center" data-alt="A massive, empty indoor play park glowing with special neon and laser lighting. A 'VIP' banner is visible. The scene suggests exclusive access to a premium facility. Vibrant and slightly darker club-like lighting for older kids, intense blues and purples." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkC9kb2n1BpNTA1MrMkqfO5DwccLG6zgsGI33X0l6YUImrsEQwDKFbrJNbTiyzXtkDV45rWdU_mYU0V7G7f8htGcRPaEXbgzsI9bH2_RCwWRU1tQUDDXz4hIMSFPCqFwmshWdcaNLS0Id2XkOnN9Hb3sdyn1dvJ8uEeZ3-cDqjbsDUyW4etDBcLIXrQSrwboiyQH_w-ZHBu1zrCb2CMr68FvSYxf2KrA_2TdG_ow4ZhD_IjnX27P2p"/>
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] overflow-hidden shadow-level-1 hover:shadow-level-2 transition-all duration-300 flex flex-col justify-between h-full">
+<div class="h-48 relative shrink-0">
+<img class="w-full h-full object-cover object-center" data-alt="VIP buyout party" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkC9kb2n1BpNTA1MrMkqfO5DwccLG6zgsGI33X0l6YUImrsEQwDKFbrJNbTiyzXtkDV45rWdU_mYU0V7G7f8htGcRPaEXbgzsI9bH2_RCwWRU1tQUDDXz4hIMSFPCqFwmshWdcaNLS0Id2XkOnN9Hb3sdyn1dvJ8uEeZ3-cDqjbsDUyW4etDBcLIXrQSrwboiyQH_w-ZHBu1zrCb2CMr68FvSYxf2KrA_2TdG_ow4ZhD_IjnX27P2p"/>
 </div>
-<div class="p-8 flex-1 flex flex-col">
-<h3 class="font-headline-md text-headline-md text-tertiary mb-2">VIP Park Buyout</h3>
-<div class="text-3xl font-bold text-primary mb-6">$999 <span class="text-body-md text-on-surface-variant dark:text-[#cbd5e1] font-normal">/up to 40 kids</span></div>
-<ul class="space-y-3 mb-8 flex-1">
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-tertiary dark:text-tertiary-fixed-dim mb-2">VIP Park Buyout</h3>
+<div class="text-3xl font-bold text-primary dark:text-primary-fixed mb-6">$999 <span class="text-body-md text-on-surface-variant dark:text-[#cbd5e1] font-normal">/up to 40 kids</span></div>
+<ul class="space-y-3 mb-8">
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">diamond</span> <span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">Exclusive park access</span></li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">diamond</span> <span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">3 hours duration</span></li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">diamond</span> <span class="font-body-md text-body-md text-on-surface dark:text-[#f8fafc]">Custom lighting &amp; music</span></li>
 </ul>
-<button class="w-full border-2 border-tertiary text-tertiary font-label-md text-label-md py-3 rounded-full btn-scale hover:bg-tertiary/5 transition-colors">Select VIP</button>
+</div>
+<button class="w-full bg-tertiary text-on-tertiary dark:bg-tertiary-container dark:text-on-tertiary-container font-label-md text-label-md py-3.5 px-6 rounded-full btn-scale shadow-sm hover:opacity-90 transition-all mt-auto font-semibold">Select VIP</button>
 </div>
 </div>
 </div>
@@ -363,8 +380,7 @@
 </div>
 </div>
 </section>
-<!-- 5. After Dark Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 bg-inverse-surface rounded-3xl text-inverse-on-surface mb-16 overflow-hidden relative">
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16 bg-inverse-surface rounded-3xl text-inverse-on-surface mb-12 md:mb-16 overflow-hidden relative">
 <div class="absolute right-0 top-0 w-1/2 h-full hidden md:block">
 <img class="w-full h-full object-cover object-center" data-alt="Kids playing in an indoor playground illuminated by blacklights and neon colors, creating a vibrant glow-in-the-dark atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaFtCOuO0zzsMG3qCg6kVFPA8HV6qSIKxIXMhh00Pny76ReCUVTrqL9AI3vPnxirQDuHYeDRIg9osjV39XeDWLOQAExIHUe2x9I3rDVaEvwntd5ZU86qg5XDF9KMeOCr571vsnazEul6aCRK525Znk8ZG0b5xCPYn_JZCCiqQpXtqZp1qyKlwm38nr4VHcDj0NTh_XvI-h51bxSqOYtmdxQ9G-xMdea6FGd5DAwnS2ac3gvTd5tGbt"/>
 <div class="absolute inset-0 bg-gradient-to-r from-inverse-surface to-transparent"></div>
@@ -385,12 +401,15 @@
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-12 pb-8">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <a href="index.html" class="flex items-center gap-2 font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
+                    Play Zone
+                </a>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -206,53 +215,6 @@
 </div>
 </form>
 </div>
-<!-- Dashboard Preview Section -->
-<div class="mt-20 w-full max-w-container-max relative z-10">
-<div class="rounded-[24px] overflow-hidden shadow-level-2 border-4 border-surface-container-lowest">
-<div class="bg-cover bg-center w-full h-[400px] md:h-[600px]" data-alt="A highly detailed, modern software dashboard interface for a premium indoor kids play facility. The screen displays vibrant, colorful statistics, upcoming booking schedules with soft rounded cards, and membership status indicators in sky blue and bubblegum pink. The UI is clean, airy, and professional yet playful, set against a pristine white background with soft ambient shadows. High resolution digital rendering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkqsAc7joj4sZDAGLQHh5miu4q0QsToF9YSUM3zya7vAo-QhEKJpdBi4CTsT7k60DLGzYcxBHorf6HAZFT3mBjywncv-QC7EK-8It3rOzAF_S4PHuqu7tLe10o9gd1uK-1vHQnkuHO52hZHnNXV4VO08eIPCBod4XCvsxzTO4sLu8eA2KXNspxrwr127EzM8TrUKvv70rgiHN3f5uqxBD6wuPWHNDWTSDKoPAoqYlSeVrv9LmGLo3p')"></div>
-</div>
-</div>
-<!-- Benefits Section -->
-<div class="mt-20 w-full max-w-container-max relative z-10">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-level-1 text-center flex flex-col items-center hover:-translate-y-2 transition-transform duration-300">
-<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-3">Easy Booking</h3>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Reserve play sessions and party rooms instantly from your phone with just a few taps.</p>
-</div>
-<div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-level-1 text-center flex flex-col items-center hover:-translate-y-2 transition-transform duration-300">
-<div class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 text-on-secondary-container">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-3">Digital Waivers</h3>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Sign and manage safety waivers securely online before you even arrive at the facility.</p>
-</div>
-<div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-level-1 text-center flex flex-col items-center hover:-translate-y-2 transition-transform duration-300">
-<div class="w-16 h-16 rounded-full bg-tertiary-container/10 flex items-center justify-center mb-6 text-tertiary-container">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">loyalty</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-3">Reward Points</h3>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Earn points every time you visit. Redeem them for snacks, extra playtime, or special merch.</p>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer Component Execution -->
-<!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 py-8 mt-20">
-    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-center md:text-left">© 2024 Play Zone. All rights reserved.</p>
-            <div class="flex flex-wrap gap-6 justify-center">
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Privacy Policy</a>
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Terms of Service</a>
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Cookie Policy</a>
-            </div>
-        </div>
-    </div>
-</footer>
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-primary text-on-primary p-3 rounded-full shadow-lg hover:scale-110 transition-all duration-300 z-50 opacity-0 pointer-events-none translate-y-4 flex items-center justify-center">

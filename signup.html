@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -105,136 +114,79 @@
         .shadow-ambient-l2 { box-shadow: 0 8px 30px rgba(0, 97, 147, 0.1); }
     </style>
 </head>
-<body class="bg-background dark:bg-on-background text-on-background dark:text-background antialiased font-body-md">
-<!-- TopNavBar (Nav suppressed as per rules for transactional pages like Sign-Up, but keeping a simplified header for brand anchor) -->
-<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
-<div class="flex justify-between items-center px-margin-desktop md:px-margin-desktop px-margin-mobile py-4 max-w-container-max mx-auto">
-<a class="flex items-center gap-2 font-headline-md text-headline-md font-extrabold text-primary" href="index.html">
-<img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
-PlayZone
+<body class="bg-background dark:bg-on-background text-on-background dark:text-background antialiased font-body-md min-h-screen flex flex-col justify-center relative">
+<div class="absolute top-6 right-6 flex items-center gap-4 z-50">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="text-on-surface-variant dark:text-inverse-on-surface hover:text-primary transition-colors font-label-md text-label-md uppercase">RTL</button>
+<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" class="text-on-surface-variant dark:text-inverse-on-surface hover:bg-primary/5 rounded-full p-2" title="Toggle Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button>
+</div>
+<main class="flex-grow flex items-center justify-center py-16 px-margin-mobile md:px-margin-desktop">
+<div class="w-full max-w-lg mx-auto">
+<!-- Registration Form Card with Brand Name Inside -->
+<div class="bg-surface-container-lowest dark:bg-[#122242] p-8 md:p-10 rounded-[24px] shadow-lg border border-outline-variant/20 dark:border-[#3f4850]/40">
+<div class="text-center mb-8">
+<a href="index.html" class="inline-flex items-center gap-2.5 mb-3 hover:opacity-80 transition-opacity">
+    <img src="logo.png" alt="Logo" class="h-9 w-9 object-cover rounded-full shadow-sm">
+    <span class="font-headline-xl text-3xl font-extrabold text-primary dark:text-primary-fixed tracking-tight">PlayZone</span>
 </a>
-<div class="flex items-center gap-4">
-<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="text-on-surface-variant dark:text-[#cbd5e1] dark:text-inverse-on-surface hover:text-primary transition-colors font-label-md text-label-md uppercase">RTL</button>
-<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" class="text-on-surface-variant dark:text-[#cbd5e1] dark:text-inverse-on-surface hover:bg-primary/5 rounded-full p-2"><span class="material-symbols-outlined">dark_mode</span></button>
-<a class="text-on-surface-variant dark:text-[#cbd5e1] dark:text-inverse-on-surface hover:text-primary transition-colors font-label-md text-label-md py-2 px-4" href="login.html">Login</a>
+<h1 class="font-headline-xl text-2xl md:text-3xl text-on-surface dark:text-[#f8fafc] font-extrabold mb-2">Join the Fun!</h1>
+<p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1] max-w-sm mx-auto">Create an account to start booking play sessions and accessing exclusive offers.</p>
 </div>
-</div>
-</header>
-<main class="pt-[100px] pb-24">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<!-- Left Column: Hero & Form -->
-<div class="space-y-8">
-<div>
-<h1 class="font-headline-xl text-headline-xl text-primary mb-4 hidden md:block">Join the Fun!</h1>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4 md:hidden">Join the Fun!</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Create an account to start booking play sessions, tracking your child's visits, and accessing exclusive offers.</p>
-</div>
-<!-- Registration Form Card -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-ambient-l1">
 <form class="space-y-6">
 <!-- Parent Details -->
 <div class="space-y-4">
-<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc]">Parent Details</h3>
+<h3 class="font-headline-md text-lg font-bold text-on-surface dark:text-[#f8fafc]">Parent Details</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">First Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Jane" type="text"/>
+<label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">First Name</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Jane" type="text"/>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Last Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Doe" type="text"/>
+<label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Last Name</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Doe" type="text"/>
 </div>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Email Address</label>
-<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="jane@example.com" type="email"/>
+<label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Email Address</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="jane@example.com" type="email"/>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Password</label>
-<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="••••••••" type="password"/>
+<label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Password</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="••••••••" type="password"/>
 </div>
 </div>
 <!-- Child Details -->
-<div class="space-y-4 pt-4 border-t border-surface-variant">
-<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc]">Child Details (Optional)</h3>
+<div class="space-y-4 pt-4 border-t border-outline-variant/30 dark:border-[#3f4850]/50">
+<h3 class="font-headline-md text-lg font-bold text-on-surface dark:text-[#f8fafc]">Child Details (Optional)</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Child's Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Tommy" type="text"/>
+<label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Child's Name</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Tommy" type="text"/>
 </div>
 <div>
-<label class="block font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] mb-2">Date of Birth</label>
-<input class="w-full bg-surface-bright border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-on-surface-variant dark:text-[#cbd5e1]" type="date"/>
+<label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Date of Birth</label>
+<input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-on-surface dark:text-[#f8fafc]" type="date"/>
 </div>
 </div>
-<button class="text-primary font-label-md text-label-md flex items-center gap-2 hover:opacity-80" type="button">
+<button class="text-primary font-label-md text-sm flex items-center gap-2 hover:opacity-80 font-semibold" type="button">
 <span class="material-symbols-outlined text-[20px]">add_circle</span> Add another child
-                            </button>
+</button>
 </div>
 <div class="pt-4">
-<button class="w-full bg-inverse-primary text-on-primary-fixed hover:bg-primary-fixed-dim font-label-md text-label-md py-4 rounded-full transition-transform active:scale-95 shadow-sm" type="submit">
+<button class="w-full bg-primary text-on-primary font-label-md text-base font-bold py-4 rounded-full transition-transform active:scale-95 shadow-md hover:opacity-95" type="submit">
                                 Create Account
-                            </button>
+</button>
+</div>
+<div class="text-center mt-6">
+<p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">
+    Already have an account? 
+    <a class="text-primary dark:text-primary-fixed font-bold hover:underline" href="login.html">Log in here</a>
+</p>
 </div>
 </form>
 </div>
 </div>
-<!-- Right Column: Image & Bento -->
-<div class="space-y-8 lg:h-full flex flex-col justify-center">
-<!-- Main Image -->
-<div class="relative h-[300px] lg:h-[400px] w-full rounded-[24px] overflow-hidden shadow-ambient-l1">
-<img class="object-cover w-full h-full object-center" data-alt="A bright, joyful indoor play area featuring soft colorful climbing blocks, a ball pit, and a child mid-jump with a huge smile. The lighting is high-key and airy, emphasizing a clean, safe, premium environment. Vibrant sky blues, bubblegum pinks, and sunny yellows dominate the palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJKNMhGG6B7Ku6YxPr_j5GxOJY3XL3GTfZTfVyiD-IYSZRm0JTzdBQHznkf-TfbefOeXcfyYsXyJ97cRsKfGnhb-bQf9k0qzmNQJn-q6USDl2WFqL9dUsqg6C9n_AUNzAdIf8NnjI7FGgQo2lDc2HZe5kf962m9rLCJj02Fc7KwIJuWi544EmtByY-FMalx_IYezlQzLmrLpm03BXheCJPBudo-RxmK8x75Vi0Z-JmIxPdYTgn-iBi"/>
-<div class="absolute inset-0 bg-gradient-to-t from-on-background/40 to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6">
-<div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-md text-label-md mb-2 shadow-sm">
-<span class="material-symbols-outlined text-[18px]">star</span> Premium Care
-                        </div>
-<p class="text-surface font-body-md">Where imagination meets safe play.</p>
-</div>
-</div>
-<!-- Why Join Us (Bento Grid Style) -->
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-6">Why PlayZone?</h3>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="bg-surface-container-low dark:bg-[#1a2a4a] p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-2">Easy Booking</h4>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Reserve spots instantly for walk-ins or special events.</p>
-</div>
-<div class="bg-surface-container-low dark:bg-[#1a2a4a] p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
-<div class="w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center mb-4 text-tertiary group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-2">Play History</h4>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Track visits and manage your child's favorite zones.</p>
-</div>
-<div class="bg-surface-container-low dark:bg-[#1a2a4a] p-6 rounded-[24px] shadow-ambient-l1 hover:shadow-ambient-l2 transition-all group">
-<div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center mb-4 text-secondary group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">loyalty</span>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-2">Exclusive Offers</h4>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Get member-only discounts on packages and parties.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
 </main>
-<!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 py-8 mt-20">
-    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] text-center md:text-left">© 2024 Play Zone. All rights reserved.</p>
-            <div class="flex flex-wrap gap-6 justify-center">
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Privacy Policy</a>
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Terms of Service</a>
-                <a href="#" class="font-label-md text-label-md text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors">Cookie Policy</a>
-            </div>
-        </div>
-    </div>
-</footer>
+
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-primary text-on-primary p-3 rounded-full shadow-lg hover:scale-110 transition-all duration-300 z-50 opacity-0 pointer-events-none translate-y-4 flex items-center justify-center">

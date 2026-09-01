@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -172,21 +181,22 @@
     });
 </script>
 
-<main class="pt-[80px]">
+<main class="pt-[90px] pb-12 md:pb-16">
 <!-- 1. Hero Section -->
-<section class="relative px-margin-mobile md:px-margin-desktop py-[80px] max-w-container-max mx-auto overflow-hidden">
-<div class="grid md:grid-cols-2 gap-gutter items-center min-h-[614px]">
-<div class="z-10 relative text-center md:text-left flex flex-col items-center md:items-start mx-auto md:mx-0">
-<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-6">Let's Connect &amp; Play!</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-8 max-w-lg">
+<section class="relative px-margin-mobile md:px-margin-desktop py-12 md:py-20 max-w-container-max mx-auto overflow-hidden">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10 relative text-center md:text-left flex flex-col items-center md:items-start max-w-xl mx-auto md:mx-0">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-4 shadow-sm font-bold">We'd Love to Hear From You</span>
+<h1 class="font-headline-xl text-4xl md:text-[52px] text-primary dark:text-primary-fixed mb-4 leading-tight font-extrabold">Let's Connect &amp; Play!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-8 leading-relaxed">
                         Have a question about our zones, ready to book a party, or just want to say hi? We are here to make your PlayZone experience magical and safe.
                     </p>
-<a class="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label-md text-label-md px-8 py-4 rounded-full scale-on-press transition-transform shadow-ambient-hover" href="#inquiry">
-                        Send a Message <span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary dark:bg-primary-fixed dark:text-on-primary-fixed font-label-md text-label-md px-8 py-4 rounded-full hover:scale-105 transition-transform shadow-md font-semibold" href="#inquiry">
+                        Send a Message <span class="material-symbols-outlined text-[20px]" data-icon="arrow_downward">arrow_downward</span>
 </a>
 </div>
-<div class="relative h-[400px] md:h-[600px] rounded-[24px] overflow-hidden shadow-ambient">
-<img class="w-full h-full object-cover rounded-[24px] object-center" data-alt="A bright, modern exterior shot of a large indoor play facility named PlayZone. The building features large glass windows revealing colorful play structures inside. The exterior is clean, welcoming, and painted in soft sky blue and vibrant yellow accents. The lighting is sunny daytime, conveying a joyful, safe, and premium environment for modern families." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtGdPU_JRqulqjM022S-XmMnzkWFhi8VLVXSfZB9pOLEi_v1qAMm3ljPwlPURQZVLA8TNxvWEDFPGJxdunsDTsCMesllYpLKOmLLZfMUbCdtM62YyVGcvQW4a7Qrr1a1Fz3cLOxpL2kWHLzKXsuVhRyrWvBwV279NwfwgKNtmkdJwMLdZiKnyIKOTbriHaDIeUfMiDtwQojaPMEYMLlvB7ZxjCpZiH5m_dihUEKZe7F-PPSIJDvzEu"/>
+<div class="relative h-[380px] md:h-[480px] rounded-[32px] overflow-hidden shadow-ambient">
+<img class="w-full h-full object-cover rounded-[32px] object-center" data-alt="PlayZone facility building exterior" src="contact_building_hero.png"/>
 </div>
 </div>
 <!-- Decorative background elements -->
@@ -227,7 +237,7 @@
 </div>
 </div>
 <div class="h-[300px] md:h-[450px] rounded-[16px] overflow-hidden shadow-sm relative group">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 object-center" data-alt="A stylized, modern map view showing the location of PlayZone in Los Angeles. The map uses a light, airy color palette with soft blues and pale yellows, avoiding cluttered street names. A vibrant, oversized pin marker with a playful star icon highlights the exact location, conveying a premium and easily accessible destination." data-location="Los Angeles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDceyMy-mgcAMaSKHModKzyu78dxY6dRYVw54Af7S-WQ3tM8J54kMptg6C1UcrhpTNEKDU6KRXVbgEGRFPHXoWZR6diKPYkCFWWW6VY_9ooQvH2FubAuwMMALZElQsmXBtXRDKaVX1XijP-2vreTUd5kyeyDCa0kNg2MbTsAXHVxdqy7EwvlaaNYuhVePIx0Eu1hhWRwPw3Sqy0RwBnw_RgDzYQ4_ds_sVdmklkws6XHVyYXTUi-hoh"/>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 object-center" data-alt="A stylized, modern map view showing the location of PlayZone" data-location="Los Angeles" src="contact_map_location.png"/>
 <div class="absolute inset-0 border-4 border-surface-container-lowest/50 rounded-[16px] pointer-events-none"></div>
 </div>
 </div>
@@ -323,12 +333,15 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-12 pb-8">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <a href="index.html" class="flex items-center gap-2 font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
+                    Play Zone
+                </a>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -250,20 +259,20 @@
 
 <main class="w-full pt-[80px]">
     <!-- Split Hero Section -->
-    <section class="relative px-margin-mobile md:px-margin-desktop py-12 md:py-24 max-w-container-max mx-auto overflow-hidden">
-        <div class="grid md:grid-cols-2 gap-gutter items-center min-h-[600px]">
-            <div class="z-10 relative flex flex-col items-start text-left mx-auto md:mx-0">
-                <span class="bg-primary-fixed text-on-primary-fixed px-4 py-1 rounded-full font-label-md text-label-md mb-6 inline-block">The Ultimate Kids Experience</span>
-                <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-6 drop-shadow-sm">Where Imagination <br>Meets Adventure</h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-10 max-w-lg">
+    <section class="relative px-margin-mobile md:px-margin-desktop pt-16 pb-16 md:pt-28 md:pb-24 max-w-container-max mx-auto overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center min-h-[600px]">
+            <div class="z-10 relative flex flex-col items-start text-left mx-auto md:mx-0 pt-6 md:pt-10">
+                <span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full font-label-md text-label-md mb-6 inline-block font-bold shadow-sm">The Ultimate Kids Experience</span>
+                <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-[#0a1a3a] dark:text-white font-extrabold mb-6 leading-tight drop-shadow-sm">Where Imagination <br>Meets Adventure</h1>
+                <p class="font-body-lg text-body-lg text-[#334155] dark:text-[#cbd5e1] mb-10 max-w-lg leading-relaxed font-normal">
                     Discover a premium indoor play world designed for safety, fun, and endless smiles. Let your children explore, learn, and grow in a meticulously sanitized environment.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <a href="package.html" class="bg-primary text-on-primary text-center px-8 py-4 rounded-full font-label-md text-label-md hover:scale-95 transition-transform duration-150 shadow-md">Book a Party</a>
-                    <a href="play zone.html" class="border-2 border-primary text-primary text-center px-8 py-4 rounded-full font-label-md text-label-md hover:scale-95 transition-transform duration-150 shadow-md">Explore Zones</a>
+                    <a href="package.html" class="bg-primary text-on-primary text-center px-8 py-4 rounded-full font-label-md text-label-md hover:scale-95 transition-transform duration-150 shadow-md font-semibold">Book a Party</a>
+                    <a href="play zone.html" class="border-2 border-primary text-primary dark:text-primary-fixed bg-surface/80 dark:bg-transparent text-center px-8 py-4 rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary hover:scale-95 transition-transform duration-150 shadow-md font-semibold">Explore Zones</a>
                 </div>
             </div>
-            <div class="relative h-[400px] md:h-full w-full rounded-[40px] md:rounded-[60px] md:rounded-bl-[120px] overflow-hidden shadow-ambient order-first md:order-last mb-8 md:mb-0">
+            <div class="relative h-[420px] md:h-[540px] w-full rounded-[40px] md:rounded-[60px] md:rounded-bl-[120px] overflow-hidden shadow-ambient order-first md:order-last mb-8 md:mb-0">
                 <img class="w-full h-full object-cover object-center" data-alt="A vibrant, high-quality photograph of joyful children running and playing in a bright, modern indoor play center." src="hero_image_2.png"/>
                 <!-- Decorative element -->
                 <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-container rounded-full blur-2xl opacity-50 z-0"></div>
@@ -368,66 +377,72 @@
     </section>
 
     <!-- Parent Testimonials Section -->
-    <section class="bg-surface-container-low dark:bg-[#1a2a4a] py-24">
+    <section class="bg-surface-container-low dark:bg-[#1a2a4a] py-20">
         <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="text-center mb-16">
-                <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Loved by Parents &amp; Kids Alike</h2>
+            <div class="text-center mb-12">
+                <h2 class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-4">Loved by Parents &amp; Kids Alike</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto">Don't just take our word for it. Here is what our community has to say about PlayZone.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
                 <!-- Testimonial 1 -->
-                <div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-sm relative">
-                    <span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-4">format_quote</span>
-                    <div class="flex text-secondary mb-4">
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                <div class="bg-surface-container-lowest dark:bg-[#122242] p-6 sm:p-8 rounded-[24px] shadow-sm relative flex flex-col justify-between h-full overflow-hidden">
+                    <span class="material-symbols-outlined text-primary/15 dark:text-primary-fixed-dim/20 text-5xl absolute top-3 right-3 pointer-events-none select-none">format_quote</span>
+                    <div>
+                        <div class="flex text-secondary dark:text-secondary-fixed mb-4">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="font-body-lg italic text-on-surface dark:text-[#f8fafc] mb-6 relative z-10 pr-6">"Absolutely the cleanest and most well-maintained indoor playground we have ever visited. My kids loved the giant ball pit!"</p>
                     </div>
-                    <p class="font-body-lg italic text-on-surface dark:text-[#f8fafc] mb-6 relative z-10">"Absolutely the cleanest and most well-maintained indoor playground we have ever visited. My kids loved the giant ball pit!"</p>
-                    <div class="flex flex-col items-center text-center gap-2 mt-4">
-                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary">SM</div>
-                        <div>
-                            <h4 class="font-label-md text-on-surface dark:text-[#f8fafc]">Sarah Mitchell</h4>
+                    <div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20 dark:border-[#3f4850]/50 mt-auto relative z-10">
+                        <div class="w-12 h-12 bg-primary-fixed dark:bg-primary-container text-on-primary-fixed dark:text-on-primary-container rounded-full flex items-center justify-center font-bold text-lg shrink-0 shadow-sm">SM</div>
+                        <div class="text-left">
+                            <h4 class="font-headline-md text-base text-on-surface dark:text-[#f8fafc] font-bold">Sarah Mitchell</h4>
                             <p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Mother of 2</p>
                         </div>
                     </div>
                 </div>
                 <!-- Testimonial 2 -->
-                <div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-sm relative">
-                    <span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-4">format_quote</span>
-                    <div class="flex text-secondary mb-4">
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                <div class="bg-surface-container-lowest dark:bg-[#122242] p-6 sm:p-8 rounded-[24px] shadow-sm relative flex flex-col justify-between h-full overflow-hidden">
+                    <span class="material-symbols-outlined text-primary/15 dark:text-primary-fixed-dim/20 text-5xl absolute top-3 right-3 pointer-events-none select-none">format_quote</span>
+                    <div>
+                        <div class="flex text-secondary dark:text-secondary-fixed mb-4">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="font-body-lg italic text-on-surface dark:text-[#f8fafc] mb-6 relative z-10 pr-6">"We hosted my son's 5th birthday party here. The staff took care of EVERYTHING. It was stress-free and magical. Highly recommend the VIP package!"</p>
                     </div>
-                    <p class="font-body-lg italic text-on-surface dark:text-[#f8fafc] mb-6 relative z-10">"We hosted my son's 5th birthday party here. The staff took care of EVERYTHING. It was stress-free and magical. Highly recommend the VIP package!"</p>
-                    <div class="flex flex-col items-center text-center gap-2 mt-4">
-                        <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center font-bold text-secondary">DJ</div>
-                        <div>
-                            <h4 class="font-label-md text-on-surface dark:text-[#f8fafc]">David Johnson</h4>
+                    <div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20 dark:border-[#3f4850]/50 mt-auto relative z-10">
+                        <div class="w-12 h-12 bg-secondary-fixed dark:bg-secondary-container text-on-secondary-fixed dark:text-on-secondary-container rounded-full flex items-center justify-center font-bold text-lg shrink-0 shadow-sm">DJ</div>
+                        <div class="text-left">
+                            <h4 class="font-headline-md text-base text-on-surface dark:text-[#f8fafc] font-bold">David Johnson</h4>
                             <p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Local Guide</p>
                         </div>
                     </div>
                 </div>
                 <!-- Testimonial 3 -->
-                <div class="bg-surface-container-lowest dark:bg-[#122242] p-8 rounded-[24px] shadow-sm relative">
-                    <span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-4">format_quote</span>
-                    <div class="flex text-secondary mb-4">
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                <div class="bg-surface-container-lowest dark:bg-[#122242] p-6 sm:p-8 rounded-[24px] shadow-sm relative flex flex-col justify-between h-full overflow-hidden">
+                    <span class="material-symbols-outlined text-primary/15 dark:text-primary-fixed-dim/20 text-5xl absolute top-3 right-3 pointer-events-none select-none">format_quote</span>
+                    <div>
+                        <div class="flex text-secondary dark:text-secondary-fixed mb-4">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="font-body-lg italic text-on-surface dark:text-[#f8fafc] mb-6 relative z-10 pr-6">"The parents' cafe is a lifesaver. Great wifi, amazing coffee, and I can easily see my toddler playing safely from my table."</p>
                     </div>
-                    <p class="font-body-lg italic text-on-surface dark:text-[#f8fafc] mb-6 relative z-10">"The parents' cafe is a lifesaver. Great wifi, amazing coffee, and I can easily see my toddler playing safely from my table."</p>
-                    <div class="flex flex-col items-center text-center gap-2 mt-4">
-                        <div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center font-bold text-tertiary">ET</div>
-                        <div>
-                            <h4 class="font-label-md text-on-surface dark:text-[#f8fafc]">Emily Tran</h4>
+                    <div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20 dark:border-[#3f4850]/50 mt-auto relative z-10">
+                        <div class="w-12 h-12 bg-tertiary-fixed dark:bg-tertiary-container text-on-tertiary-fixed dark:text-on-tertiary-container rounded-full flex items-center justify-center font-bold text-lg shrink-0 shadow-sm">ET</div>
+                        <div class="text-left">
+                            <h4 class="font-headline-md text-base text-on-surface dark:text-[#f8fafc] font-bold">Emily Tran</h4>
                             <p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Freelancer</p>
                         </div>
                     </div>
@@ -437,21 +452,21 @@
     </section>
 
     <!-- Quick Pricing / Membership Snapshot -->
-    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
-        <div class="bg-primary rounded-[40px] overflow-hidden shadow-ambient relative">
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-12 md:pt-16 pb-12 md:pb-16">
+        <div class="bg-primary rounded-[32px] md:rounded-[40px] overflow-hidden shadow-ambient relative">
             <div class="absolute inset-0 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2ydApm2cm0WJuTJyQNI8EqAd0Fr1rGfzqi7I9UYZmGa-JIOiBspvLlrOfioempc2N_3rqOXZNkLV5WN52HpVJm_Hxh_Ml2u7jSKMBD3-Wekxb0wekLqUYSoi3UFKLnrLalC5h7PSYBPz2Hq1zBFMny2_FgbmnRw3c2qLy9wk-hTEgJHiNTQl_ufQbxG8Jr9FBSep2jxfA54nN-dc_pTIUejWZvwKHxfhPxrv0S-IkNhb0DGszJPYl')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-            <div class="grid md:grid-cols-2 p-10 md:p-16 gap-12 relative z-10 items-center">
-                <div class="text-on-primary">
-                    <h2 class="font-headline-xl text-4xl mb-4">Unlimited Play All Month Long</h2>
-                    <p class="font-body-lg mb-8 opacity-90">Become a PlayZone Member today and enjoy unrestricted access, exclusive discounts on cafe food, and priority booking for events.</p>
-                    <div class="flex items-center gap-4">
-                        <span class="text-5xl font-extrabold">$49</span>
-                        <span class="font-body-md opacity-80">/ month<br>per child</span>
+            <div class="grid md:grid-cols-2 p-8 md:p-12 lg:p-14 gap-8 md:gap-12 relative z-10 items-center">
+                <div class="text-on-primary flex flex-col justify-center">
+                    <h2 class="font-headline-xl text-3xl md:text-4xl mb-3 font-extrabold">Unlimited Play All Month Long</h2>
+                    <p class="font-body-lg text-body-lg mb-6 opacity-90 leading-relaxed max-w-xl">Become a PlayZone Member today and enjoy unrestricted access, exclusive discounts on cafe food, and priority booking for events.</p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <span class="text-4xl md:text-5xl font-extrabold">$49</span>
+                        <span class="font-body-md text-sm md:text-base opacity-90 leading-tight">/ month<br>per child</span>
                     </div>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-4 justify-end">
-                    <a href="package.html" class="bg-surface/20 hover:bg-surface/30 backdrop-blur-md border border-surface/50 text-on-primary px-8 py-4 rounded-full font-label-md text-label-md transition-all text-center">View Day Passes</a>
-                    <a href="membership.html" class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md text-label-md hover:scale-95 transition-transform shadow-md text-center">Get Membership</a>
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-start md:justify-end w-full">
+                    <a href="package.html" class="w-full sm:w-auto bg-surface/20 hover:bg-surface/30 backdrop-blur-md border border-surface/50 text-on-primary px-8 py-4 rounded-full font-label-md text-label-md transition-all text-center font-semibold">View Day Passes</a>
+                    <a href="membership.html" class="w-full sm:w-auto bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md text-label-md hover:scale-95 transition-transform shadow-md text-center font-semibold">Get Membership</a>
                 </div>
             </div>
         </div>
@@ -460,12 +475,15 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-12 pb-8">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <a href="index.html" class="flex items-center gap-2 font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
+                    Play Zone
+                </a>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>

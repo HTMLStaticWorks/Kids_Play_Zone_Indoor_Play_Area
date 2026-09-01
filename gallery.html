@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -181,7 +190,7 @@
     });
 </script>
 
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24 space-y-24 md:space-y-32">
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-12 md:pb-16 space-y-24 md:space-y-32">
 <!-- 1. Hero Section -->
 <section class="mt-8">
 <div class="text-center mb-12">
@@ -274,12 +283,15 @@
 </section> 
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-12 pb-8">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <a href="index.html" class="flex items-center gap-2 font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
+                    Play Zone
+                </a>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>

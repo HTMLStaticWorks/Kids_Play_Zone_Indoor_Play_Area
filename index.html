@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -267,7 +276,7 @@
 </div>
 </div>
 </header>
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-24">
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 md:pt-20 pb-12 md:pb-16 flex flex-col gap-24">
 <!-- Play Zones Section (Bento Grid) -->
 <section class="flex flex-col items-center">
 <div class="text-center mb-12">
@@ -305,11 +314,14 @@
 </div>
 </section>
 <!-- Safety Measures (Glassmorphism-inspired layout) -->
-<section class="relative bg-primary-container rounded-[32px] p-8 md:p-16 overflow-hidden text-center flex flex-col items-center">
+<section class="relative bg-primary-container rounded-[32px] p-8 md:p-12 overflow-hidden text-center flex flex-col items-center">
 <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 <div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary-container rounded-full blur-3xl opacity-30 translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+<div class="relative z-10 w-full text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-4">Uncompromising Safety First</h2>
+<p class="font-body-md text-body-md text-on-primary/90 max-w-2xl mx-auto">Hospital-grade protocols, trained staff, and 24/7 CCTV for absolute peace of mind.</p>
+</div>
 <div class="relative z-10 w-full">
-<h2 class="font-headline-lg text-headline-lg text-on-primary mb-12">Uncompromising Safety First</h2>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full">
 <div class="flex flex-col items-center">
 <div class="w-16 h-16 rounded-full bg-on-primary/10 flex items-center justify-center mb-4">
@@ -343,10 +355,15 @@
 </div>
 </section>
 <!-- 1. The Fuel Station (Café) -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<section class="flex flex-col items-center">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-4">The Fuel Station Café</h2>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto">Relax and recharge while the kids play. Enjoy ethically sourced artisan coffee for parents and delicious, healthy snacks for little ones.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-low dark:bg-[#1a2a4a] rounded-[32px] p-8 md:p-12 w-full">
 <div class="order-2 md:order-1 flex flex-col justify-center">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">The Fuel Station Café</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-6">Relax and recharge while the kids play. Enjoy our selection of premium, ethically sourced coffee for parents, and a variety of delicious, healthy snacks designed to keep little ones energized.</p>
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-4">Parent Comfort & Fresh Refreshments</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-6">Enjoy our selection of premium, ethically sourced coffee for parents, and a variety of delicious, healthy snacks designed to keep little ones energized.</p>
 <ul class="space-y-4 mb-8">
 <li class="flex items-center gap-3 text-on-surface-variant dark:text-[#cbd5e1] font-body-md">
 <span class="material-symbols-outlined text-secondary-container">check_circle</span> Premium Artisan Coffee
@@ -360,18 +377,24 @@
 </ul>
 <button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-label-md text-label-md hover:scale-95 transition-transform w-fit shadow-sm">View Menu</button>
 </div>
-<div class="order-1 md:order-2 h-[400px] rounded-[32px] overflow-hidden shadow-lg">
+<div class="order-1 md:order-2 h-[350px] md:h-[400px] rounded-[24px] overflow-hidden shadow-md">
 <img alt="Modern and comfortable cafe area with coffee and snacks" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ0u9hF7hD-FLtF31UZ73Cr0J0YeFFfRML3PiwlrvMrFsPJH6odrNE-ALt5b7pl8T3BUEiiUkbB2JgAacPP_lSfZsu7TbvXe0z4Zd9VU6rE-9LjhTtMJl6Mjg0v6ArKFPBo9hoTSi6QpZKFpye2vZSpz2g58lxHDQfZIZovJTWHd3tEIX0YsBs1do15LlXpDnmeYq5gZ-lpFxAkndSj1J98DYhcF0C8LjVBdIIjw5MlxoE6wYOD44T"/>
+</div>
 </div>
 </section>
 <!-- 2. Where the Fun Happens -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-low dark:bg-[#1a2a4a] rounded-[32px] p-8 md:p-12">
-<div class="h-[400px] rounded-[24px] overflow-hidden shadow-md">
-<img alt="Exterior view of the Kids Play Zone facility showing easy access" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5OqT5k0z4NbcP7OuNrTqWKC5J9uROEE-S4IfO4nupGs-7pYeckdQP5uk_TxFKPxY3VYI1fSd-SWKzX_mHTWHRjkboM5LpiAF7Zq5K_F8k988AJU2S7SU5OBZmeqjSI24evV9JaCBZ-Qvw-o1-AbTHbDxM91s8OAfnKHz3YHhwI1aGuVJfvCvRdW51VaAldsrYxPPJTCJKWhoV7bFDlQYQDyigxeCPnCdAUvcPYKzFa42JmWtm3MQZ"/>
+<section class="flex flex-col items-center">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-4">Where the Fun Happens</h2>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto">Conveniently located in the heart of the city with ample free parking and full accessibility for all families.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-low dark:bg-[#1a2a4a] rounded-[32px] p-8 md:p-12 w-full">
+<div class="h-[350px] md:h-[400px] rounded-[24px] overflow-hidden shadow-md">
+<img alt="Exterior view of the Kids Play Zone facility showing easy access" class="w-full h-full object-cover object-center" src="contact_building_hero.png"/>
 </div>
 <div class="flex flex-col justify-center">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Where the Fun Happens</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-8">Conveniently located in the heart of the city with ample free parking. Our facility is fully accessible, making it easy for families to drop in for a day of fun.</p>
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-4">Visit Our Playland Location</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-8">Our facility is easily accessible with convenient drop-off zones, spacious parking, and friendly staff ready to welcome you.</p>
 <div class="flex items-start gap-4 mb-6">
 <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined text-on-primary-fixed">location_on</span>
@@ -391,11 +414,12 @@
 </div>
 </div>
 </div>
+</div>
 </section>
 <!-- 3. Recent Adventures (Blog/News) -->
 <section class="flex flex-col items-center">
 <div class="text-center mb-12">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Recent Adventures</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-4">Recent Adventures</h2>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto">Catch up on the latest events, stories, and activities happening at Kids Play Zone.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
@@ -432,10 +456,15 @@
 </div>
 </section>
 <!-- 4. Safety as Standard -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-highest dark:bg-[#334155] rounded-[32px] overflow-hidden">
-<div class="p-8 md:p-16 flex flex-col justify-center">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Safety as Standard</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-8">We go above and beyond to provide a secure environment. From secure gating and wristband matching to hospital-grade sanitization, your child's wellbeing is our absolute priority.</p>
+<section class="flex flex-col items-center">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-4">Safety as Standard</h2>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto">We go above and beyond to provide a secure environment with wristband matching and electrostatic sanitization.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-surface-container-highest dark:bg-[#334155] rounded-[32px] p-8 md:p-12 w-full">
+<div class="flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-[#f8fafc] mb-4">Our Rigorous Safety Protocols</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] mb-8">From secure gating and wristband matching to hospital-grade sanitization, your child's wellbeing is our absolute priority.</p>
 <div class="grid grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
@@ -449,18 +478,22 @@
 </div>
 </div>
 </div>
-<div class="h-full min-h-[400px]">
+<div class="h-[350px] md:h-[400px] rounded-[24px] overflow-hidden shadow-md">
 <img alt="Staff member sanitizing play equipment meticulously" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARvnYfHZuwbCPQrDsiZluvvOS-2-zPbspyXKBitP0f1-oGChl_hXVNZsQNTPBR1lRJND8wUqvciqHtD21rXxaBmI-7_HqH_OqWcpWPKvMHU8EBKWkPQ4KnAeTmWL721GdQnx-itgy5OJIlIHCO6HoTohH61f4u7BOvUoIE6w1bwE6Cq3paqkgZIF8W6-Hn2XkOMmWWTr4IVRwW_qYHxmuySW9Rqy1MgYqQ1t8j_Sqktbm42iXQODyz"/>
+</div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-12 pb-8">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <a href="index.html" class="flex items-center gap-2 font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
+                    Play Zone
+                </a>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>

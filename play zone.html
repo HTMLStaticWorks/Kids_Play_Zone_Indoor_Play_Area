@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -188,7 +197,7 @@
 </script>
 
 <!-- Main Content -->
-<main class="pt-[100px] pb-32">
+<main class="pt-[100px] pb-12 md:pb-16">
 <!-- Hero Section -->
 <section class="bg-pattern w-full py-20 px-margin-mobile md:px-margin-desktop mb-16 relative overflow-hidden">
 <div class="max-w-container-max mx-auto text-center relative z-10 slide-in">
@@ -208,17 +217,18 @@
 </section>
 <!-- Zones Grid -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
 <!-- Toddler Zone -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A brightly lit, soft-padded indoor play area designed specifically for toddlers ages 0-3. The space features pastel-colored foam blocks, low sensory climbing bumps, and a small, shallow ball pit with pearl-white balls. The environment feels safe, clean, and modern with soft natural light streaming in, adhering to a cheerful and professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCECupW8xat85wR4TA6rGi6qb7jQaLKjwQ48hAut1ssYyAZb3_ZjRwJYmykPT_xOky3fRBi36f7QkEHOP4oozzlvRYTOIv3mmdTSKXwd7vVq8uHs6U7EZmb1csgK6ktnY4HYk80h7zjuzMw_wuYrCXwFbelF3cEDypcyohyF64QN9ax32a2gPf5MQrSz6xmcKXkNdihI1FODbyDJXUHMdgHLPnWNM-cHsoYNTD8gad8sBrLsik_DQ-c"/>
-<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group flex flex-col justify-between h-full">
+<div class="relative h-64 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="Toddler play zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCECupW8xat85wR4TA6rGi6qb7jQaLKjwQ48hAut1ssYyAZb3_ZjRwJYmykPT_xOky3fRBi36f7QkEHOP4oozzlvRYTOIv3mmdTSKXwd7vVq8uHs6U7EZmb1csgK6ktnY4HYk80h7zjuzMw_wuYrCXwFbelF3cEDypcyohyF64QN9ax32a2gPf5MQrSz6xmcKXkNdihI1FODbyDJXUHMdgHLPnWNM-cHsoYNTD8gad8sBrLsik_DQ-c"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm font-semibold">
 <span class="material-symbols-outlined text-[16px]">child_care</span> Toddler 0-3
                         </div>
 </div>
-<div class="p-8 flex flex-col items-center text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Tiny Explorers Soft Play</h2>
+<div class="p-8 flex flex-col justify-between flex-grow text-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4">Tiny Explorers Soft Play</h2>
 <div class="flex flex-wrap justify-center gap-2 mb-6">
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Sensory Mats</span>
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Mini Ball Pit</span>
@@ -226,27 +236,29 @@
 </div>
 <div class="space-y-3 mb-8">
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-tertiary">verified_user</span>
+<span class="material-symbols-outlined text-tertiary shrink-0">verified_user</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Triple-padded flooring and rounded edges on all structures.</p>
 </div>
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-primary shrink-0">groups</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Capacity: 15 children (with mandatory adult supervision)</p>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150">Reserve This Zone</button>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 mt-auto font-semibold">Reserve This Zone</button>
 </div>
 </div>
 <!-- Junior Zone -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group" style="transition-delay: 100ms;">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="An energetic indoor play structure designed for kids ages 3-6. Features include colorful, mid-height tube slides, gentle climbing ramps, and interactive wall panels with playful gears. The space is vibrant with accents of sky blue and sunshine yellow against clean white padding. The mood is active, joyful, and impeccably clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6DUfY84Y0LPQZMnsF2Ij_DWeKny7wwyRsywDyueGtpser7YPXwRuwuVF-KQ1PXkLKjKnE1i5w9tK2a-QJdEXfYdtR2g9ja3udu1IGxB6gOx9ZG8Lrh5VWp-GW7R1Wf0x2o-AiSCiRTAvuPviYqGMGL9KKPpqEKVMWmvk2WKQo_NymkNJWMzuR5PxcYRt6OXXEiPV-q_KrzQbHJHz1mtZ9KGFUcsXF2wZEAykWnn6BEqz0W2G8AyMc"/>
-<div class="absolute top-4 left-4 bg-primary-fixed-dim text-on-primary-fixed px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group flex flex-col justify-between h-full" style="transition-delay: 100ms;">
+<div class="relative h-64 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="Junior play zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6DUfY84Y0LPQZMnsF2Ij_DWeKny7wwyRsywDyueGtpser7YPXwRuwuVF-KQ1PXkLKjKnE1i5w9tK2a-QJdEXfYdtR2g9ja3udu1IGxB6gOx9ZG8Lrh5VWp-GW7R1Wf0x2o-AiSCiRTAvuPviYqGMGL9KKPpqEKVMWmvk2WKQo_NymkNJWMzuR5PxcYRt6OXXEiPV-q_KrzQbHJHz1mtZ9KGFUcsXF2wZEAykWnn6BEqz0W2G8AyMc"/>
+<div class="absolute top-4 left-4 bg-primary-fixed-dim text-on-primary-fixed px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm font-semibold">
 <span class="material-symbols-outlined text-[16px]">sports_gymnastics</span> Junior 3-6
                         </div>
 </div>
-<div class="p-8 flex flex-col items-center text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Little Jumpers Castle</h2>
+<div class="p-8 flex flex-col justify-between flex-grow text-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4">Little Jumpers Castle</h2>
 <div class="flex flex-wrap justify-center gap-2 mb-6">
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Tube Slides</span>
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Trampoline</span>
@@ -254,27 +266,29 @@
 </div>
 <div class="space-y-3 mb-8">
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-tertiary">verified_user</span>
+<span class="material-symbols-outlined text-tertiary shrink-0">verified_user</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Enclosed netting on all elevated platforms.</p>
 </div>
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-primary shrink-0">groups</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Capacity: 25 children (Staff monitored)</p>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150">Reserve This Zone</button>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 mt-auto font-semibold">Reserve This Zone</button>
 </div>
 </div>
 <!-- Adventure Zone -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group" style="transition-delay: 200ms;">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A massive, multi-level indoor adventure playground for older kids ages 6-12. The structure includes complex rope bridges, high winding slides, and ninja-warrior style obstacle courses. The lighting is bright and dynamic, highlighting the premium quality and sturdy construction of the equipment. Colors are modern navy, bright blue, and pink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByTGP2I9zwVFAtozwJGCLivh9B10ovW-Tg-9cxXvb6evHhBs-_tq4XlgInHcrjiRzs1HmfEsugAYAcSaS5kCP3EhToA4qHuwn9bolT6t62hpAdIm21oENGg1w0jH8gi3OcTkDwGsw8lHPTepZhfpcieWQgoHBSdovKc7z7F1djg8TcV9HElW5ZBij3RHC58JiJ6vlRLU0_MlkLp_d77G8Cv2OmzjwKG1PfDAn4Ub1hjMlj48M8oyRm"/>
-<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group flex flex-col justify-between h-full" style="transition-delay: 200ms;">
+<div class="relative h-64 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="Adventure play zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByTGP2I9zwVFAtozwJGCLivh9B10ovW-Tg-9cxXvb6evHhBs-_tq4XlgInHcrjiRzs1HmfEsugAYAcSaS5kCP3EhToA4qHuwn9bolT6t62hpAdIm21oENGg1w0jH8gi3OcTkDwGsw8lHPTepZhfpcieWQgoHBSdovKc7z7F1djg8TcV9HElW5ZBij3RHC58JiJ6vlRLU0_MlkLp_d77G8Cv2OmzjwKG1PfDAn4Ub1hjMlj48M8oyRm"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm font-semibold">
 <span class="material-symbols-outlined text-[16px]">landscape</span> Adventure 6-12
                         </div>
 </div>
-<div class="p-8 flex flex-col items-center text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Summit Challenge Course</h2>
+<div class="p-8 flex flex-col justify-between flex-grow text-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4">Summit Challenge Course</h2>
 <div class="flex flex-wrap justify-center gap-2 mb-6">
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Ninja Course</span>
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Drop Slides</span>
@@ -282,27 +296,29 @@
 </div>
 <div class="space-y-3 mb-8">
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-tertiary">verified_user</span>
+<span class="material-symbols-outlined text-tertiary shrink-0">verified_user</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Industrial-grade harnesses available for high ropes; continuous belay system.</p>
 </div>
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-primary shrink-0">groups</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Capacity: 40 children (Staff monitored)</p>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150">Reserve This Zone</button>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 mt-auto font-semibold">Reserve This Zone</button>
 </div>
 </div>
 <!-- Creative Corner -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group" style="transition-delay: 300ms;">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A modern, brightly lit indoor art and creation studio for kids. The room features low wooden tables, colorful stools, and walls adorned with giant Lego-style building boards and chalkboard sections. The atmosphere is calm, inspiring, and clean, with organized bins of art supplies and building blocks. A premium, tactile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuT-5FDMOKuFCRMTfD2IkreSHR8wSBM2coXLGfZvE7U6G1dbuQfD5ePDVcY7xmBWD1jrxSSKWTVpp090JhdkjMran462o3Snw9pmF8fdMIcaMSgN2IlsrCOfLrbXsUrt-5zuYkvqwgtJNcTMiLPg-QLBKIdUjcbYZfvZu8hX1boeIUFxLtyeBOGUe8cT8CoUOsvBezLCC-IrwhD2Nocr0HCNDHTGlT-dmafkMi1VuQ0ijQD_qNzj8N"/>
-<div class="absolute top-4 left-4 bg-tertiary-fixed-dim text-on-tertiary-fixed px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group flex flex-col justify-between h-full" style="transition-delay: 300ms;">
+<div class="relative h-64 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="Creative studio zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuT-5FDMOKuFCRMTfD2IkreSHR8wSBM2coXLGfZvE7U6G1dbuQfD5ePDVcY7xmBWD1jrxSSKWTVpp090JhdkjMran462o3Snw9pmF8fdMIcaMSgN2IlsrCOfLrbXsUrt-5zuYkvqwgtJNcTMiLPg-QLBKIdUjcbYZfvZu8hX1boeIUFxLtyeBOGUe8cT8CoUOsvBezLCC-IrwhD2Nocr0HCNDHTGlT-dmafkMi1VuQ0ijQD_qNzj8N"/>
+<div class="absolute top-4 left-4 bg-tertiary-fixed-dim text-on-tertiary-fixed px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm font-semibold">
 <span class="material-symbols-outlined text-[16px]">palette</span> All Ages
                         </div>
 </div>
-<div class="p-8 flex flex-col items-center text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">The Imagination Studio</h2>
+<div class="p-8 flex flex-col justify-between flex-grow text-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4">The Imagination Studio</h2>
 <div class="flex flex-wrap justify-center gap-2 mb-6">
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Lego Wall</span>
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Art Stations</span>
@@ -310,27 +326,29 @@
 </div>
 <div class="space-y-3 mb-8">
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-tertiary">verified_user</span>
+<span class="material-symbols-outlined text-tertiary shrink-0">verified_user</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Non-toxic, washable materials only. Quiet zone enforced.</p>
 </div>
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-primary shrink-0">groups</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Capacity: 20 children</p>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150">Reserve This Zone</button>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 mt-auto font-semibold">Reserve This Zone</button>
 </div>
 </div>
 <!-- Sensory & Developmental Play -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group" style="transition-delay: 400ms;">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A calming yet stimulating environment designed for cognitive growth and sensory exploration. Brightly lit indoor play area focused on toddlers and kids with sensory needs. Soft, colorful sensory toys, glowing bubble tubes, and tactile walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgf_0JtDVLfUFn5TSRzZwLpidZVHzJ4s7i0mmE2WLSYhiWzIag7VuN-pTndrk4HCAfgNM8FXVfW3NDCYmfuKsk0nONZO2vFqrb8wDJ52ZgHXtHC5aLnQSwPtWf9UJuqCDQAR6xPSWIVC4bw86QDvB3Kr_ntkSxezvjHEfuLu_GoA_KSgHeyi4RgliQXt3teP1Y6b4t5yTvxLawq7C7zDNleG9_s_rdeSVK_F5gIXGy6z8zFAvbuzV9"/>
-<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group flex flex-col justify-between h-full" style="transition-delay: 400ms;">
+<div class="relative h-64 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="Sensory play zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgf_0JtDVLfUFn5TSRzZwLpidZVHzJ4s7i0mmE2WLSYhiWzIag7VuN-pTndrk4HCAfgNM8FXVfW3NDCYmfuKsk0nONZO2vFqrb8wDJ52ZgHXtHC5aLnQSwPtWf9UJuqCDQAR6xPSWIVC4bw86QDvB3Kr_ntkSxezvjHEfuLu_GoA_KSgHeyi4RgliQXt3teP1Y6b4t5yTvxLawq7C7zDNleG9_s_rdeSVK_F5gIXGy6z8zFAvbuzV9"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm font-semibold">
 <span class="material-symbols-outlined text-[16px]">psychology</span> Sensory
                         </div>
 </div>
-<div class="p-8 flex flex-col items-center text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Sensory &amp; Developmental Play</h2>
+<div class="p-8 flex flex-col justify-between flex-grow text-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4">Sensory &amp; Developmental Play</h2>
 <div class="flex flex-wrap justify-center gap-2 mb-6">
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Bubble Tubes</span>
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Tactile Walls</span>
@@ -338,27 +356,29 @@
 </div>
 <div class="space-y-3 mb-8">
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-tertiary">verified_user</span>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">A calming yet stimulating environment designed for cognitive growth and sensory exploration.</p>
+<span class="material-symbols-outlined text-tertiary shrink-0">verified_user</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">A calming yet stimulating environment designed for cognitive growth.</p>
 </div>
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-primary shrink-0">groups</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Capacity: 15 children</p>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150">Reserve This Zone</button>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 mt-auto font-semibold">Reserve This Zone</button>
 </div>
 </div>
 <!-- The Ninja Challenge Track -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group" style="transition-delay: 500ms;">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A dynamic indoor obstacle course for older kids. Multi-level ninja course featuring timed runs, foam pits, and climbing elements. Safety-first equipment. High energy, vibrant colors, bright and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC__-mjb9O5dJLTIrv84KtiOUHVovys5ZObymJL280jkQKXr8xdHSvTNJx1i1pAI3aLVPFeL8EVj7JGNaUxlA4FyEH9bft87EoNh7j5ZR6yPyHpRD5wUc8-vJi_en-DJR3dSB81vHKooeEMEPM6qMzcP4L2y3f18MNXgmRl0cXCn16QniKtDCl3DEb6c0I5nBUNgJZbwrwdD95F6ZMDta6a8WL2lmJ1rI4Rafon-qvMRt2KvalQ5f0B"/>
-<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group flex flex-col justify-between h-full" style="transition-delay: 500ms;">
+<div class="relative h-64 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="Ninja track zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC__-mjb9O5dJLTIrv84KtiOUHVovys5ZObymJL280jkQKXr8xdHSvTNJx1i1pAI3aLVPFeL8EVj7JGNaUxlA4FyEH9bft87EoNh7j5ZR6yPyHpRD5wUc8-vJi_en-DJR3dSB81vHKooeEMEPM6qMzcP4L2y3f18MNXgmRl0cXCn16QniKtDCl3DEb6c0I5nBUNgJZbwrwdD95F6ZMDta6a8WL2lmJ1rI4Rafon-qvMRt2KvalQ5f0B"/>
+<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm font-semibold">
 <span class="material-symbols-outlined text-[16px]">sprint</span> Ninja 6-12
                         </div>
 </div>
-<div class="p-8 flex flex-col items-center text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">The Ninja Challenge Track</h2>
+<div class="p-8 flex flex-col justify-between flex-grow text-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4">The Ninja Challenge Track</h2>
 <div class="flex flex-wrap justify-center gap-2 mb-6">
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Timed Runs</span>
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Foam Pits</span>
@@ -366,27 +386,27 @@
 </div>
 <div class="space-y-3 mb-8">
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-tertiary">verified_user</span>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Test your agility and strength on our multi-level ninja course featuring timed runs and safety-first equipment.</p>
+<span class="material-symbols-outlined text-tertiary shrink-0">verified_user</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Agility and strength course with timed runs and safety equipment.</p>
 </div>
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-primary shrink-0">groups</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Capacity: 30 children</p>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150">Reserve This Zone</button>
 </div>
-</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 mt-auto font-semibold">Reserve This Zone</button>
 <!-- Parent Observation & Comfort -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group md:col-span-2 justify-self-center w-full md:w-[calc(50%-12px)]" style="transition-delay: 600ms;">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="A modern, comfortable lounge area with clear glass partitions overlooking bright indoor kid play zones. Premium coffee station, sound-dampened environment. Comfortable seating, relaxed atmosphere, clean and vibrant aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhkOEfbf4sP4QBESVUW7hR8xOzX542N3QLhafBkSWjgUlKd6NEWlOfSeH846lfFevUjmhThgzlC1w0LKDtcUppCHyI0qn4khqx1Le6mwKtTruZsvGQyN-rKm8R9IYTzaOAxdV2YPSrouhLNwxhKh4wnA7BwpOMr_HPHEBWv7ROMY7vJF8rGmuJO5fT0QTkbWnyfUSStT6GeL3F1dFXcMVGlXp8bCApPNWN_IFCTUeEe4bSYXxMfu0e"/>
-<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-2xl shadow-level-1 overflow-hidden hover:shadow-level-2 transition-shadow duration-300 slide-in group flex flex-col justify-between h-full md:col-span-2 max-w-2xl mx-auto w-full" style="transition-delay: 600ms;">
+<div class="relative h-64 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" data-alt="Parent lounge zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhkOEfbf4sP4QBESVUW7hR8xOzX542N3QLhafBkSWjgUlKd6NEWlOfSeH846lfFevUjmhThgzlC1w0LKDtcUppCHyI0qn4khqx1Le6mwKtTruZsvGQyN-rKm8R9IYTzaOAxdV2YPSrouhLNwxhKh4wnA7BwpOMr_HPHEBWv7ROMY7vJF8rGmuJO5fT0QTkbWnyfUSStT6GeL3F1dFXcMVGlXp8bCApPNWN_IFCTUeEe4bSYXxMfu0e"/>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm font-semibold">
 <span class="material-symbols-outlined text-[16px]">coffee</span> Parents
-                        </div>
 </div>
-<div class="p-8 flex flex-col items-center text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Parent Observation &amp; Comfort</h2>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow text-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4">Parent Observation &amp; Comfort</h2>
 <div class="flex flex-wrap justify-center gap-2 mb-6">
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Premium Coffee</span>
 <span class="bg-surface-variant dark:bg-[#213050] text-on-surface-variant dark:text-[#cbd5e1] px-3 py-1 rounded-full text-[12px] font-semibold">Sound-Dampened</span>
@@ -394,27 +414,31 @@
 </div>
 <div class="space-y-3 mb-8">
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-tertiary">verified_user</span>
-<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Relax with a premium coffee in our sound-dampened lounge, keeping a perfect line of sight to your little ones at all times.</p>
+<span class="material-symbols-outlined text-tertiary shrink-0">verified_user</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Relax with a premium coffee in our sound-dampened lounge with perfect line of sight.</p>
 </div>
 <div class="flex items-center text-left gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-primary shrink-0">groups</span>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Capacity: 40 adults</p>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150">Reserve Table</button>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-full hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 mt-auto font-semibold">Reserve Table</button>
 </div>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-12 pb-8">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <a href="index.html" class="flex items-center gap-2 font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
+                    Play Zone
+                </a>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>

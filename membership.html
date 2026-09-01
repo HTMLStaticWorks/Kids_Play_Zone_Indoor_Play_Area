@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    }
+</script>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -234,19 +243,19 @@
 
 <main class="flex-grow pt-[80px]">
 <!-- Hero Section -->
-<section class="relative min-h-[614px] flex items-center justify-center overflow-hidden bg-surface-container dark:bg-inverse-surface py-20">
+<section class="relative min-h-[550px] flex items-center justify-center overflow-hidden bg-background dark:bg-on-background py-20">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-100 object-center" data-alt="A vibrant, high-quality photograph of joyful children running and playing in a bright, modern indoor play center. They are wearing brightly colored 'Member' badges. The space is filled with soft, colorful climbing structures, ball pits, and slides. The lighting is sunny and cheerful, highlighting the energetic and safe atmosphere of the premium facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFj-c2shN0VyEQ1pktRzIyZIu-IgVSx87eqiPlHwvc2KVROK5C5xnGZPD4e5uMn-wjHRORRF7QYvmNwCe0z4Bn1IPpJPGEyjqDi7KG0gmvxVsoLBzfsA385n6gNUbSq7B7FdrRf4bD0nAN9xlbADPBH_kBxAQTBW-PIf3DRRVoVHEDjNulJ3sOwkk0dOGFl2HyEkdg7_ijIeDPfALRH02-eTfZgNbHkqjygcWToD7XIxJd5XUNofN"/>
+<img class="w-full h-full object-cover opacity-25 dark:opacity-20 object-center mix-blend-overlay" data-alt="PlayZone facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFj-c2shN0VyEQ1pktRzIyZIu-IgVSx87eqiPlHwvc2KVROK5C5xnGZPD4e5uMn-wjHRORRF7QYvmNwCe0z4Bn1IPpJPGEyjqDi7KG0gmvxVsoLBzfsA385n6gNUbSq7B7FdrRf4bD0nAN9xlbADPBH_kBxAQTBW-PIf3DRRVoVHEDjNulJ3sOwkk0dOGFl2HyEkdg7_ijIeDPfALRH02-eTfZgNbHkqjygcWToD7XIxJd5XUNofN"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background dark:from-on-background/70 dark:via-on-background/90 dark:to-on-background z-10"></div>
 </div>
-<div class="absolute inset-0 bg-surface/30 dark:bg-inverse-surface/50 z-10"></div>
 <div class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-6 shadow-sm">Play More, Save More</span>
-<h1 class="font-headline-xl text-headline-xl md:text-[64px] text-primary mb-6 max-w-4xl mx-auto leading-tight">Unlock Boundless Joy with PlayZone Memberships</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto mb-10">Give your kids the gift of unlimited play in our premium, safe, and engaging environment. Join our community of happy families today.</p>
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-6 shadow-sm font-bold">Play More, Save More</span>
+<h1 class="font-headline-xl text-4xl md:text-[56px] text-primary dark:text-primary-fixed mb-6 max-w-4xl mx-auto leading-tight font-extrabold">Unlock Boundless Joy with PlayZone Memberships</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1] max-w-2xl mx-auto mb-10 leading-relaxed">Give your kids the gift of unlimited play in our premium, safe, and engaging environment. Join our community of happy families today.</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="font-label-md text-label-md bg-tertiary text-on-tertiary px-8 py-4 rounded-full hover:bg-tertiary-container hover:text-on-tertiary-container transition-all hover:-translate-y-1 active:scale-95 ambient-shadow-2 flex items-center justify-center gap-2">
+<a href="#plans" class="font-label-md text-label-md bg-tertiary text-on-tertiary px-8 py-4 rounded-full hover:bg-tertiary-container transition-all hover:-translate-y-1 active:scale-95 shadow-md flex items-center justify-center gap-2 font-semibold">
                         View Plans <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
-</button>
+</a>
 </div>
 </div>
 </section>
@@ -411,45 +420,45 @@
 </div>
 </section>
 <!-- Our Play Community (Testimonials) -->
-<section class="py-24 bg-surface-container dark:bg-inverse-surface">
+<section class="pt-16 pb-12 md:pb-16 bg-surface-container-low dark:bg-[#1a2a4a]">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-16">
-<h2 class="font-headline-xl text-[40px] text-primary mb-4">Our Play Community</h2>
+<h2 class="font-headline-xl text-[40px] text-primary dark:text-primary-fixed mb-4">Our Play Community</h2>
 <p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-xl mx-auto">Hear what our members have to say about the joy and convenience of being part of the PlayZone family.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Testimonial 1 -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-8 ambient-shadow-1 flex flex-col h-full relative">
-<span class="material-symbols-outlined text-tertiary/20 text-[64px] absolute top-4 right-4">format_quote</span>
-<p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] mb-8 flex-grow relative z-10">"Getting the Adventurer membership was the best decision for our family. The kids love it, and I can actually get some work done in the Parent Lounge!"</p>
-<div class="flex items-center gap-4">
-<img alt="Portrait of a smiling mother" class="w-12 h-12 rounded-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkvN_rGM_tlAcEsKqJ9MRGXLaygu9pP3HzaNBUYDCcUY63kDeNVMvbj-pPd7Gly6AB7D_AQRfMIoTgI-WFzmJ0dAEwoZ2GzIsqp-XMEL7RGtf52TwLHOoYcs1dmxZjDfj9KKjBJ1qb7TIA3E29SsNrchrP1vmZCntIEurQ4wdgytF-cBcNmDXEvOv_GEiN8mrYg4vw8224RIkH4-VqOi9UwUeLO7O2dY1WmGrhQiU5-ltDfDt_wFBf"/>
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 sm:p-8 ambient-shadow-1 flex flex-col justify-between h-full relative overflow-hidden">
+<span class="material-symbols-outlined text-tertiary/15 dark:text-tertiary-fixed-dim/20 text-5xl absolute top-3 right-3 pointer-events-none select-none">format_quote</span>
+<p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] mb-8 flex-grow relative z-10 pr-6 pt-1">"Getting the Adventurer membership was the best decision for our family. The kids love it, and I can actually get some work done in the Parent Lounge!"</p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20 dark:border-[#3f4850]/50 mt-auto relative z-10">
+<img alt="Portrait of a smiling mother" class="w-12 h-12 rounded-full object-cover object-center shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkvN_rGM_tlAcEsKqJ9MRGXLaygu9pP3HzaNBUYDCcUY63kDeNVMvbj-pPd7Gly6AB7D_AQRfMIoTgI-WFzmJ0dAEwoZ2GzIsqp-XMEL7RGtf52TwLHOoYcs1dmxZjDfj9KKjBJ1qb7TIA3E29SsNrchrP1vmZCntIEurQ4wdgytF-cBcNmDXEvOv_GEiN8mrYg4vw8224RIkH4-VqOi9UwUeLO7O2dY1WmGrhQiU5-ltDfDt_wFBf"/>
 <div>
-<h4 class="font-label-md text-on-surface dark:text-[#f8fafc]">Sarah T.</h4>
+<h4 class="font-label-md text-on-surface dark:text-[#f8fafc] font-bold">Sarah T.</h4>
 <p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Adventurer Member</p>
 </div>
 </div>
 </div>
 <!-- Testimonial 2 -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-8 ambient-shadow-1 flex flex-col h-full relative">
-<span class="material-symbols-outlined text-tertiary/20 text-[64px] absolute top-4 right-4">format_quote</span>
-<p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] mb-8 flex-grow relative z-10">"The VIP Hero pass pays for itself! We are here almost every other day. The staff is wonderful and the facilities are always spotless."</p>
-<div class="flex items-center gap-4">
-<img alt="Portrait of a smiling father" class="w-12 h-12 rounded-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVLIdC4RNYgJz8SBUXOYsyJZptBcw72cVjJBhqaBiS75Jvse_KmZFM_Eh7yDZU8YvoAePO2r-mw7Y4e0dXbcir9m30ey_IsGSSlYka9s4ZII5VMWl0xuKfynAIsf3CbsbpTQYKbf5h0dO8x-lZ5BJ3qovgEhty8vsPFeOUFPYSAW_vm2yToLnTieUDWnPkhpx_Fu6UNSWVbNh4XB4rGFKMNof6kZKwNQp_dvbWeR0hpQKzyOmFHXUe"/>
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 sm:p-8 ambient-shadow-1 flex flex-col justify-between h-full relative overflow-hidden">
+<span class="material-symbols-outlined text-tertiary/15 dark:text-tertiary-fixed-dim/20 text-5xl absolute top-3 right-3 pointer-events-none select-none">format_quote</span>
+<p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] mb-8 flex-grow relative z-10 pr-6 pt-1">"The VIP Hero pass pays for itself! We are here almost every other day. The staff is wonderful and the facilities are always spotless."</p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20 dark:border-[#3f4850]/50 mt-auto relative z-10">
+<img alt="Portrait of a smiling father" class="w-12 h-12 rounded-full object-cover object-center shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVLIdC4RNYgJz8SBUXOYsyJZptBcw72cVjJBhqaBiS75Jvse_KmZFM_Eh7yDZU8YvoAePO2r-mw7Y4e0dXbcir9m30ey_IsGSSlYka9s4ZII5VMWl0xuKfynAIsf3CbsbpTQYKbf5h0dO8x-lZ5BJ3qovgEhty8vsPFeOUFPYSAW_vm2yToLnTieUDWnPkhpx_Fu6UNSWVbNh4XB4rGFKMNof6kZKwNQp_dvbWeR0hpQKzyOmFHXUe"/>
 <div>
-<h4 class="font-label-md text-on-surface dark:text-[#f8fafc]">Michael R.</h4>
+<h4 class="font-label-md text-on-surface dark:text-[#f8fafc] font-bold">Michael R.</h4>
 <p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">VIP Hero Member</p>
 </div>
 </div>
 </div>
 <!-- Testimonial 3 -->
-<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-8 ambient-shadow-1 flex flex-col h-full relative">
-<span class="material-symbols-outlined text-tertiary/20 text-[64px] absolute top-4 right-4">format_quote</span>
-<p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] mb-8 flex-grow relative z-10">"The member-exclusive events are incredible. My kids talk about the holiday party for weeks! It really feels like a close-knit community."</p>
-<div class="flex items-center gap-4">
-<img alt="Portrait of a happy family" class="w-12 h-12 rounded-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrjjOmGWXqz6Jo2dK3A0uuEm7qudlDehWrautSBwLCvj9aWYOe-CVLm69t-_IvI1RY5jGtFlkuDMswiED9GNpnv8PUnj34KIEOHS9EasKxomrEhrkQStSRf-GAFPDQUTD0MJctCSMiaAIDmNdWO6meGzqECnvZu22_C_mc_MZMDBCGA0gB9ZUD7vpNo1Ixx8Ky0HQ7PguW5vLwmh7BfpygZmtec8zvhERdlZuFuAGdJ-yi6nOoqzH9"/>
+<div class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 sm:p-8 ambient-shadow-1 flex flex-col justify-between h-full relative overflow-hidden">
+<span class="material-symbols-outlined text-tertiary/15 dark:text-tertiary-fixed-dim/20 text-5xl absolute top-3 right-3 pointer-events-none select-none">format_quote</span>
+<p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] mb-8 flex-grow relative z-10 pr-6 pt-1">"The member-exclusive events are incredible. My kids talk about the holiday party for weeks! It really feels like a close-knit community."</p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20 dark:border-[#3f4850]/50 mt-auto relative z-10">
+<img alt="Portrait of a happy family" class="w-12 h-12 rounded-full object-cover object-center shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrjjOmGWXqz6Jo2dK3A0uuEm7qudlDehWrautSBwLCvj9aWYOe-CVLm69t-_IvI1RY5jGtFlkuDMswiED9GNpnv8PUnj34KIEOHS9EasKxomrEhrkQStSRf-GAFPDQUTD0MJctCSMiaAIDmNdWO6meGzqECnvZu22_C_mc_MZMDBCGA0gB9ZUD7vpNo1Ixx8Ky0HQ7PguW5vLwmh7BfpygZmtec8zvhERdlZuFuAGdJ-yi6nOoqzH9"/>
 <div>
-<h4 class="font-label-md text-on-surface dark:text-[#f8fafc]">Emily &amp; Dan W.</h4>
+<h4 class="font-label-md text-on-surface dark:text-[#f8fafc] font-bold">Emily &amp; Dan W.</h4>
 <p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1] text-sm">Explorer Members</p>
 </div>
 </div>
@@ -459,12 +468,15 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-16 pb-8 mt-20">
+<footer class="bg-surface-container-low dark:bg-[#1a2a4a] border-t border-outline-variant/50 dark:border-[#3f4850]/50 pt-12 pb-8">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
-                <div class="font-headline-lg text-headline-lg font-extrabold text-primary">Play Zone</div>
+                <a href="index.html" class="flex items-center gap-2 font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Logo" class="h-8 w-8 object-cover rounded-full shadow-sm">
+                    Play Zone
+                </a>
                 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1] max-w-[250px]">
                     Where little adventures begin every day. Safe, clean, and imaginative play for all ages.
                 </p>
