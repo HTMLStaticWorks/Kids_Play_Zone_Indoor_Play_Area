@@ -4,10 +4,8 @@
 <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
     } else {
         document.documentElement.classList.remove('dark');
-        document.documentElement.classList.add('light');
     }
 </script>
 <meta charset="utf-8"/>
@@ -236,12 +234,12 @@
 <!-- Overlay for mobile -->
 <div class="fixed inset-0 bg-on-surface/20 z-40 hidden backdrop-blur-sm" id="mobileOverlay"></div>
 <!-- Main Content Canvas -->
-<main class="flex-grow md:ml-64 p-margin-mobile md:px-10 md:py-8 w-full max-w-7xl mx-auto relative min-h-screen">
+<main class="flex-grow md:ml-64 px-4 sm:px-6 md:px-8 py-6 md:py-8 w-full max-w-[1400px] relative min-h-screen">
 <!-- Top Header Bar for Desktop & Mobile -->
 <div class="flex justify-between items-center mb-8 pb-4 border-b border-outline-variant/30 dark:border-[#3f4850]/50 mt-14 md:mt-0">
     <div>
-        <h1 class="font-headline-xl text-3xl md:text-4xl text-primary dark:text-primary-fixed font-extrabold">Parent Dashboard</h1>
-        <p class="font-body-md text-sm md:text-base text-on-surface-variant dark:text-[#cbd5e1] mt-1">Manage bookings, memberships, and family preferences.</p>
+        <h1 class="font-headline-xl text-2xl sm:text-3xl md:text-4xl text-primary dark:text-primary-fixed font-extrabold">Parent Dashboard</h1>
+        <p class="font-body-md text-xs sm:text-sm md:text-base text-on-surface-variant dark:text-[#cbd5e1] mt-1">Manage bookings, memberships, and family preferences.</p>
     </div>
     <div class="flex items-center gap-3">
         <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="text-on-surface-variant dark:text-[#cbd5e1] hover:text-primary transition-colors font-label-md text-xs uppercase px-3 py-1.5 rounded-lg border border-outline-variant/40 dark:border-[#3f4850]">RTL</button>
@@ -251,26 +249,26 @@
 
 <!-- Tab: Bookings -->
 <div id="tab-bookings" class="tab-pane">
-    <div class="mb-8">
-        <h2 class="font-headline-lg text-2xl md:text-3xl text-on-surface dark:text-[#f8fafc] font-bold">Book a Session</h2>
-        <p class="font-body-md text-on-surface-variant dark:text-[#cbd5e1]">Schedule your next playtime adventure.</p>
+    <div class="mb-6 sm:mb-8">
+        <h2 class="font-headline-lg text-xl sm:text-2xl md:text-3xl text-on-surface dark:text-[#f8fafc] font-extrabold">Book a Session</h2>
+        <p class="font-body-md text-xs sm:text-sm md:text-base text-on-surface-variant dark:text-[#cbd5e1]">Schedule your next playtime adventure.</p>
     </div>
     <!-- Bento Grid Layout -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <!-- Book a Play Session (Main Focus Column - 8 Cols) -->
-        <section class="lg:col-span-7 xl:col-span-8 bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 md:p-8 shadow-sm border border-outline-variant/20 dark:border-[#3f4850]/40 relative overflow-hidden">
-            <h3 class="font-headline-md text-xl text-on-surface dark:text-[#f8fafc] mb-6 font-bold">Select Details</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <!-- Book a Play Session (Main Focus Column - 7/8 Cols) -->
+        <section class="lg:col-span-7 xl:col-span-8 bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-5 sm:p-6 md:p-8 shadow-sm border border-outline-variant/20 dark:border-[#3f4850]/40 relative overflow-hidden">
+            <h3 class="font-headline-md text-lg sm:text-xl text-on-surface dark:text-[#f8fafc] mb-6 font-bold">Select Details</h3>
             <form class="space-y-6 relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Date -->
                     <div>
-                        <label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Select Date</label>
-                        <input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" type="date"/>
+                        <label class="block font-label-md text-xs sm:text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Select Date</label>
+                        <input class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-sm" type="date"/>
                     </div>
                     <!-- Time -->
                     <div>
-                        <label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Select Time Slot</label>
-                        <select class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none cursor-pointer">
+                        <label class="block font-label-md text-xs sm:text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Select Time Slot</label>
+                        <select class="w-full bg-surface-container-low dark:bg-[#1a2a4a] text-on-surface dark:text-[#f8fafc] border border-outline-variant dark:border-[#3f4850] rounded-[16px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none cursor-pointer text-sm">
                             <option>10:00 AM - 12:00 PM</option>
                             <option>01:00 PM - 03:00 PM</option>
                             <option>04:00 PM - 06:00 PM</option>
@@ -279,26 +277,26 @@
                 </div>
                 <!-- Zone Selector (Balanced 3 columns) -->
                 <div>
-                    <label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-3 font-semibold">Choose Play Zone</label>
+                    <label class="block font-label-md text-xs sm:text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-3 font-semibold">Choose Play Zone</label>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <label class="cursor-pointer relative group">
                             <input checked="" class="peer sr-only" name="zone" type="radio"/>
-                            <div class="bg-surface-container-low dark:bg-[#1a2a4a] rounded-2xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-container/20 dark:peer-checked:bg-primary/20 transition-all group-hover:scale-[0.98]">
-                                <span class="material-symbols-outlined text-primary text-3xl mb-2" style="font-variation-settings: 'FILL' 1;">toys</span>
+                            <div class="bg-surface-container-low dark:bg-[#1a2a4a] rounded-2xl p-4 sm:p-5 text-center border-2 border-outline-variant/30 dark:border-[#3f4850] peer-checked:border-primary dark:peer-checked:border-primary-fixed peer-checked:bg-primary/10 dark:peer-checked:bg-primary-fixed/15 transition-all group-hover:scale-[0.98]">
+                                <span class="material-symbols-outlined text-primary dark:text-primary-fixed text-3xl sm:text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">toys</span>
                                 <span class="block font-label-md text-sm font-bold text-on-surface dark:text-[#f8fafc]">Toddler Town</span>
                             </div>
                         </label>
                         <label class="cursor-pointer relative group">
                             <input class="peer sr-only" name="zone" type="radio"/>
-                            <div class="bg-surface-container-low dark:bg-[#1a2a4a] rounded-2xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-container/20 dark:peer-checked:bg-primary/20 transition-all group-hover:scale-[0.98]">
-                                <span class="material-symbols-outlined text-primary text-3xl mb-2" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                            <div class="bg-surface-container-low dark:bg-[#1a2a4a] rounded-2xl p-4 sm:p-5 text-center border-2 border-outline-variant/30 dark:border-[#3f4850] peer-checked:border-primary dark:peer-checked:border-primary-fixed peer-checked:bg-primary/10 dark:peer-checked:bg-primary-fixed/15 transition-all group-hover:scale-[0.98]">
+                                <span class="material-symbols-outlined text-primary dark:text-primary-fixed text-3xl sm:text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
                                 <span class="block font-label-md text-sm font-bold text-on-surface dark:text-[#f8fafc]">Ninja Course</span>
                             </div>
                         </label>
                         <label class="cursor-pointer relative group">
                             <input class="peer sr-only" name="zone" type="radio"/>
-                            <div class="bg-surface-container-low dark:bg-[#1a2a4a] rounded-2xl p-4 text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-container/20 dark:peer-checked:bg-primary/20 transition-all group-hover:scale-[0.98]">
-                                <span class="material-symbols-outlined text-primary text-3xl mb-2" style="font-variation-settings: 'FILL' 1;">palette</span>
+                            <div class="bg-surface-container-low dark:bg-[#1a2a4a] rounded-2xl p-4 sm:p-5 text-center border-2 border-outline-variant/30 dark:border-[#3f4850] peer-checked:border-primary dark:peer-checked:border-primary-fixed peer-checked:bg-primary/10 dark:peer-checked:bg-primary-fixed/15 transition-all group-hover:scale-[0.98]">
+                                <span class="material-symbols-outlined text-primary dark:text-primary-fixed text-3xl sm:text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">palette</span>
                                 <span class="block font-label-md text-sm font-bold text-on-surface dark:text-[#f8fafc]">Art Studio</span>
                             </div>
                         </label>
@@ -306,20 +304,20 @@
                 </div>
                 <!-- Children Input -->
                 <div>
-                    <label class="block font-label-md text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Children Attending</label>
+                    <label class="block font-label-md text-xs sm:text-sm text-on-surface-variant dark:text-[#cbd5e1] mb-2 font-semibold">Children Attending</label>
                     <div class="flex flex-wrap items-center gap-4">
                         <label class="flex items-center gap-3 bg-surface-container-low dark:bg-[#1a2a4a] rounded-xl px-4 py-2.5 cursor-pointer border border-outline-variant/30 dark:border-[#3f4850]">
                             <input checked="" class="text-primary rounded focus:ring-primary border-outline-variant dark:border-[#3f4850] w-4 h-4" type="checkbox"/>
-                            <span class="font-body-md text-sm text-on-surface dark:text-[#f8fafc] font-medium">Leo (Age 4)</span>
+                            <span class="font-body-md text-xs sm:text-sm text-on-surface dark:text-[#f8fafc] font-medium">Leo (Age 4)</span>
                         </label>
                         <label class="flex items-center gap-3 bg-surface-container-low dark:bg-[#1a2a4a] rounded-xl px-4 py-2.5 cursor-pointer border border-outline-variant/30 dark:border-[#3f4850]">
                             <input class="text-primary rounded focus:ring-primary border-outline-variant dark:border-[#3f4850] w-4 h-4" type="checkbox"/>
-                            <span class="font-body-md text-sm text-on-surface dark:text-[#f8fafc] font-medium">Mia (Age 7)</span>
+                            <span class="font-body-md text-xs sm:text-sm text-on-surface dark:text-[#f8fafc] font-medium">Mia (Age 7)</span>
                         </label>
                     </div>
                 </div>
                 <div class="pt-4 flex justify-end">
-                    <button class="bg-primary text-on-primary font-label-md text-sm py-3.5 px-8 rounded-full hover:scale-[0.98] transition-transform shadow-md font-semibold flex items-center gap-2" type="button">
+                    <button class="w-full sm:w-auto bg-primary text-on-primary dark:bg-primary-fixed dark:text-on-primary-fixed font-label-md text-sm py-3.5 px-8 rounded-full hover:scale-[0.98] transition-transform shadow-md font-bold flex items-center justify-center gap-2" type="button">
                         <span class="material-symbols-outlined text-lg">event_available</span>
                         Confirm Booking
                     </button>
@@ -329,7 +327,7 @@
             <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
         </section>
         
-        <!-- Sidebar Column (4 Cols) -->
+        <!-- Sidebar Column (5/4 Cols) -->
         <div class="lg:col-span-5 xl:col-span-4 flex flex-col gap-6">
             <!-- Active Membership Card -->
             <section class="bg-gradient-to-br from-primary to-[#004b73] text-on-primary rounded-[24px] p-6 shadow-md relative overflow-hidden group hover:scale-[0.99] transition-transform">
@@ -339,7 +337,7 @@
                             <h4 class="font-label-md text-xs text-primary-fixed uppercase tracking-wider mb-1 font-bold">Active Plan</h4>
                             <h3 class="font-headline-md text-2xl font-extrabold">Family Fun Pass</h3>
                         </div>
-                        <span class="material-symbols-outlined text-4xl text-secondary-fixed opacity-90" style="font-variation-settings: 'FILL' 1;">stars</span>
+                        <span class="material-symbols-outlined text-4xl text-[#fdd400] opacity-90" style="font-variation-settings: 'FILL' 1;">stars</span>
                     </div>
                     <div class="space-y-3 mb-6">
                         <div class="flex justify-between items-center border-b border-on-primary/20 pb-2">
@@ -348,10 +346,10 @@
                         </div>
                         <div class="flex justify-between items-center border-b border-on-primary/20 pb-2">
                             <span class="font-body-md text-sm text-primary-fixed">Sessions Left</span>
-                            <span class="font-label-md text-lg font-bold text-secondary-fixed">12 / 20</span>
+                            <span class="font-label-md text-lg font-bold text-[#fdd400]">12 / 20</span>
                         </div>
                     </div>
-                    <a href="membership.html" class="block w-full text-center bg-white text-primary font-label-md text-sm py-2.5 rounded-full hover:bg-surface-container transition-colors font-bold shadow-sm">
+                    <a href="membership.html" class="block w-full text-center bg-[#fdd400] text-[#0a1a3a] font-label-md text-sm py-3 rounded-full hover:bg-white hover:text-primary transition-all duration-200 font-extrabold shadow-md">
                         Manage Membership
                     </a>
                 </div>
@@ -363,20 +361,20 @@
             <section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm border border-outline-variant/20 dark:border-[#3f4850]/40">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="font-headline-md text-lg font-bold text-on-surface dark:text-[#f8fafc]">My Kids</h3>
-                    <button class="text-primary hover:bg-primary-fixed rounded-full p-1 transition-colors" title="Add Child">
+                    <button class="text-primary dark:text-primary-fixed hover:bg-primary-fixed/20 rounded-full p-1 transition-colors" title="Add Child">
                         <span class="material-symbols-outlined text-xl">add_circle</span>
                     </button>
                 </div>
                 <ul class="space-y-3">
                     <li class="flex items-center gap-3 bg-surface-container-low dark:bg-[#1a2a4a] p-3 rounded-2xl border border-transparent hover:border-primary/20 transition-colors">
-                        <div class="w-10 h-10 bg-tertiary-container/30 text-tertiary rounded-full flex items-center justify-center font-bold text-sm">L</div>
+                        <div class="w-10 h-10 bg-primary/10 text-primary dark:bg-primary-fixed/20 dark:text-primary-fixed rounded-full flex items-center justify-center font-bold text-sm">L</div>
                         <div>
                             <p class="font-label-md text-sm font-bold text-on-surface dark:text-[#f8fafc]">Leo</p>
                             <p class="font-body-md text-xs text-on-surface-variant dark:text-[#cbd5e1]">Age 4 • Toddler Town</p>
                         </div>
                     </li>
                     <li class="flex items-center gap-3 bg-surface-container-low dark:bg-[#1a2a4a] p-3 rounded-2xl border border-transparent hover:border-primary/20 transition-colors">
-                        <div class="w-10 h-10 bg-secondary-container/50 text-secondary rounded-full flex items-center justify-center font-bold text-sm">M</div>
+                        <div class="w-10 h-10 bg-secondary/15 text-secondary dark:bg-secondary/30 dark:text-secondary-fixed rounded-full flex items-center justify-center font-bold text-sm">M</div>
                         <div>
                             <p class="font-label-md text-sm font-bold text-on-surface dark:text-[#f8fafc]">Mia</p>
                             <p class="font-body-md text-xs text-on-surface-variant dark:text-[#cbd5e1]">Age 7 • Ninja Course</p>
@@ -389,39 +387,39 @@
 </div>
 <!-- Tab: History -->
 <div id="tab-history" class="tab-pane hidden">
-<header class="mb-10">
-<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Booking History</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">View your past and upcoming play sessions.</p>
+<header class="mb-8">
+<h1 class="font-headline-xl text-2xl sm:text-3xl md:text-4xl text-primary dark:text-primary-fixed font-extrabold mb-2">Booking History</h1>
+<p class="font-body-lg text-sm sm:text-base text-on-surface-variant dark:text-[#cbd5e1]">View your past and upcoming play sessions.</p>
 </header>
-<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden">
+<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden border border-outline-variant/20 dark:border-[#3f4850]/40">
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
 <thead>
 <tr class="border-b border-outline-variant/30 dark:border-[#3f4850]/50 text-on-surface-variant dark:text-[#cbd5e1] font-label-md text-label-md">
-<th class="pb-4 font-normal">Date & Time</th>
-<th class="pb-4 font-normal">Play Zone</th>
-<th class="pb-4 font-normal">Children</th>
-<th class="pb-4 font-normal">Status</th>
+<th class="pb-4 font-semibold">Date &amp; Time</th>
+<th class="pb-4 font-semibold">Play Zone</th>
+<th class="pb-4 font-semibold">Children</th>
+<th class="pb-4 font-semibold">Status</th>
 </tr>
 </thead>
 <tbody>
 <tr class="border-b border-outline-variant/30 dark:border-[#3f4850]/50">
-<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Nov 15, 2024<br><span class="text-sm text-on-surface-variant">10:00 AM - 12:00 PM</span></td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Nov 15, 2024<br/><span class="text-sm text-on-surface-variant dark:text-[#cbd5e1]">10:00 AM - 12:00 PM</span></td>
 <td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Toddler Town</td>
 <td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Leo (4)</td>
-<td class="py-4"><span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-md text-sm">Upcoming</span></td>
+<td class="py-4"><span class="px-3 py-1 rounded-full bg-secondary/15 text-secondary dark:bg-secondary/30 dark:text-secondary-fixed font-label-md text-sm font-bold">Upcoming</span></td>
 </tr>
 <tr class="border-b border-outline-variant/30 dark:border-[#3f4850]/50">
-<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Oct 28, 2024<br><span class="text-sm text-on-surface-variant">04:00 PM - 06:00 PM</span></td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Oct 28, 2024<br/><span class="text-sm text-on-surface-variant dark:text-[#cbd5e1]">04:00 PM - 06:00 PM</span></td>
 <td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Ninja Course</td>
 <td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Mia (7)</td>
-<td class="py-4"><span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-sm">Completed</span></td>
+<td class="py-4"><span class="px-3 py-1 rounded-full bg-primary/10 text-primary dark:bg-primary-fixed/20 dark:text-primary-fixed font-label-md text-sm font-bold">Completed</span></td>
 </tr>
 <tr>
-<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Oct 10, 2024<br><span class="text-sm text-on-surface-variant">01:00 PM - 03:00 PM</span></td>
+<td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Oct 10, 2024<br/><span class="text-sm text-on-surface-variant dark:text-[#cbd5e1]">01:00 PM - 03:00 PM</span></td>
 <td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Art Studio</td>
 <td class="py-4 font-body-md text-on-surface dark:text-[#f8fafc]">Leo (4), Mia (7)</td>
-<td class="py-4"><span class="px-3 py-1 rounded-full bg-error/10 text-error font-label-md text-sm">Cancelled</span></td>
+<td class="py-4"><span class="px-3 py-1 rounded-full bg-error/10 text-error font-label-md text-sm font-bold">Cancelled</span></td>
 </tr>
 </tbody>
 </table>
@@ -431,22 +429,22 @@
 
 <!-- Tab: Invoices -->
 <div id="tab-invoices" class="tab-pane hidden">
-<header class="mb-10">
-<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Invoices</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Manage your billing and payment history.</p>
+<header class="mb-8">
+<h1 class="font-headline-xl text-2xl sm:text-3xl md:text-4xl text-primary dark:text-primary-fixed font-extrabold mb-2">Invoices</h1>
+<p class="font-body-lg text-sm sm:text-base text-on-surface-variant dark:text-[#cbd5e1]">Manage your billing and payment history.</p>
 </header>
-<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden">
+<section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden border border-outline-variant/20 dark:border-[#3f4850]/40">
 <div class="space-y-4">
 <!-- Invoice Item 1 -->
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-surface-container-low dark:bg-[#1a2a4a] rounded-xl border border-transparent hover:border-primary/20 transition-colors gap-4">
 <div>
-<h3 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-1">Invoice #INV-2024-001</h3>
+<h3 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-1 font-bold">Invoice #INV-2024-001</h3>
 <p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Issued: Oct 25, 2024 • Family Fun Pass (Monthly)</p>
 </div>
 <div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end">
-<span class="font-headline-sm text-lg font-bold text-tertiary">$49.00</span>
-<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-sm">Paid</span>
-<button class="text-primary hover:bg-primary/10 rounded-full p-2 transition-colors" title="Download Invoice">
+<span class="font-headline-sm text-lg font-extrabold text-primary dark:text-primary-fixed">$49.00</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary dark:bg-primary-fixed/20 dark:text-primary-fixed font-label-md text-sm font-bold">Paid</span>
+<button class="text-primary dark:text-primary-fixed hover:bg-primary/10 rounded-full p-2 transition-colors" title="Download Invoice">
 <span class="material-symbols-outlined">download</span>
 </button>
 </div>
@@ -454,13 +452,13 @@
 <!-- Invoice Item 2 -->
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-surface-container-low dark:bg-[#1a2a4a] rounded-xl border border-transparent hover:border-primary/20 transition-colors gap-4">
 <div>
-<h3 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-1">Invoice #INV-2024-002</h3>
+<h3 class="font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-1 font-bold">Invoice #INV-2024-002</h3>
 <p class="font-body-md text-sm text-on-surface-variant dark:text-[#cbd5e1]">Issued: Sep 25, 2024 • Family Fun Pass (Monthly)</p>
 </div>
 <div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end">
-<span class="font-headline-sm text-lg font-bold text-tertiary">$49.00</span>
-<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-sm">Paid</span>
-<button class="text-primary hover:bg-primary/10 rounded-full p-2 transition-colors" title="Download Invoice">
+<span class="font-headline-sm text-lg font-extrabold text-primary dark:text-primary-fixed">$49.00</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary dark:bg-primary-fixed/20 dark:text-primary-fixed font-label-md text-sm font-bold">Paid</span>
+<button class="text-primary dark:text-primary-fixed hover:bg-primary/10 rounded-full p-2 transition-colors" title="Download Invoice">
 <span class="material-symbols-outlined">download</span>
 </button>
 </div>
@@ -471,9 +469,9 @@
 
 <!-- Tab: Profile -->
 <div id="tab-profile" class="tab-pane hidden">
-<header class="mb-10">
-<h1 class="font-headline-xl text-headline-xl text-primary mb-2">My Profile</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-[#cbd5e1]">Update your personal information and preferences.</p>
+<header class="mb-8">
+<h1 class="font-headline-xl text-2xl sm:text-3xl md:text-4xl text-primary dark:text-primary-fixed font-extrabold mb-2">My Profile</h1>
+<p class="font-body-lg text-sm sm:text-base text-on-surface-variant dark:text-[#cbd5e1]">Update your personal information and preferences.</p>
 </header>
 <section class="bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] p-6 shadow-sm overflow-hidden max-w-3xl">
 <form class="space-y-6">

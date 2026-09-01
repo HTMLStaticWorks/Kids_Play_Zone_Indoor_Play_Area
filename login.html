@@ -4,10 +4,8 @@
 <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
     } else {
         document.documentElement.classList.remove('dark');
-        document.documentElement.classList.add('light');
     }
 </script>
 <meta charset="utf-8"/>
@@ -188,7 +186,10 @@
 <!-- Login Section -->
 <div class="w-full max-w-md bg-surface-container-lowest dark:bg-[#122242] rounded-[24px] shadow-level-1 p-8 md:p-10 relative z-10">
 <div class="text-center mb-8">
-<a href="index.html" class="inline-block hover:opacity-80 transition-opacity"><h1 class="font-headline-xl text-headline-xl text-primary mb-2 tracking-tight">PlayZone</h1></a>
+<a href="index.html" class="inline-flex items-center gap-2.5 mb-3 hover:opacity-80 transition-opacity">
+    <img src="logo.png" alt="Logo" class="h-10 w-10 object-cover rounded-full shadow-sm">
+    <span class="font-headline-xl text-3xl font-extrabold text-primary dark:text-primary-fixed tracking-tight">PlayZone</span>
+</a>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-[#cbd5e1]">Welcome back! Let's get playing.</p>
 </div>
 <form class="space-y-6">
@@ -197,11 +198,11 @@
 <input class="w-full rounded-[16px] border border-outline-variant dark:border-[#3f4850] px-4 py-3 font-body-md text-body-md text-on-surface dark:text-[#f8fafc] focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="email" placeholder="parent@example.com" type="email"/>
 </div>
 <div>
-<div class="flex justify-between items-center mb-2">
-<label class="block font-label-md text-label-md text-on-surface dark:text-[#f8fafc]" for="password">Password</label>
-<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">Forgot?</a>
-</div>
+<label class="block font-label-md text-label-md text-on-surface dark:text-[#f8fafc] mb-2" for="password">Password</label>
 <input class="w-full rounded-[16px] border border-outline-variant dark:border-[#3f4850] px-4 py-3 font-body-md text-body-md text-on-surface dark:text-[#f8fafc] focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="password" placeholder="••••••••" type="password"/>
+<div class="text-right mt-2">
+<a class="font-label-md text-sm text-primary dark:text-primary-fixed hover:text-primary-container hover:underline transition-colors" href="#">Forgot Password?</a>
+</div>
 </div>
 <button class="w-full bg-primary text-on-primary rounded-full py-4 font-label-md text-label-md hover:shadow-level-2 hover:scale-[0.98] transition-all active:scale-95 flex items-center justify-center gap-2" type="button">
                     Login securely
